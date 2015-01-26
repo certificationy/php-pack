@@ -1,0 +1,14 @@
+{
+    "name": "mickaelandrieu/php-pack",
+    "type": "certificationy-pack",
+    "description": "A series of questions to prepare for the Zend PHP5.5 certification",
+    "keywords": ["Zend", "PHP5.5", "certification", "test", "exam"],
+    "homepage": "http://github.com/mickaelandrieu/php-pack",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mickaël Andrieu",
+            "email": "andrieu.travail@gmail.com"
+        }
+    ]
+}
