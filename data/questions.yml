@@ -35,3 +35,50 @@ questions:
             - {value: 200,    correct: true}
             - {value: 20,      correct: false}
             - {value: 10,      correct: false}
+    -
+        question: |
+                       What is the output of the following PHP script?
+                       $a = 1;
+                       $b = 2.5;
+                       $c = 0xFF;
+                       $d = $b + $c;
+                       $e = $d * $b;
+                       $f = ($d + $e) % $a;
+                       print ($f + $e);
+        answers:
+            - {value: 643.75, correct: true}
+            - {value: 432, correct: false}
+            - {value: 643, correct: false}
+            - {value: 257, correct: false}
+            - {value: 432.75, correct: false}
+    -
+        question: What is the best way to ensure that a user-defined function is always passed an object as its single parameter?
+        answers:
+            - {value: 'function myfunction(StdClass $a)', correct: true}
+            - {value: 'function myfunction($a = StdClass)', correct: false}
+            - {value: 'Use is_object() within the function', correct: false}
+            - {value: 'There is no way to ensure the parameter will be an object.', correct: false}
+            - {value: 'function myfunction(Object $a)', correct: false}
+    -
+        question: | What does the following function do, when passed two integer values for $p and $q?
+                       function magic($p, $q) {
+                            return ($q == 0) ? $p: magic($q, $p % $q);
+                        }
+        answers:
+            - {value: 'Loops infinitely.', correct: false}
+            - {value: 'Switches the values of $p and $q.', correct: false}
+            - {value: 'Determines if they are both even or odd?', correct: false}
+            - {value: 'Determines the greatest common divisor between them.', correct: true}
+            - {value: 'Calculates the modulus between the two.', correct: false}
+    -
+        question: | What would go in place of ?????? below to make this script execute without a fatal error?
+                       $a = 1;
+                       $b = 0;
+                       /* ?????? */
+                       $c = $a / $b;
+        answers:
+            - {value: 'quit();', correct: false}
+            - {value: 'die();', correct: true}
+            - {value: 'stop();', correct: false}
+            - {value: '__halt_compiler();', correct: true}
+            - {value: 'exit();', correct: true}
