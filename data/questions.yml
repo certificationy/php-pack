@@ -60,7 +60,8 @@ questions:
             - {value: 'There is no way to ensure the parameter will be an object.', correct: false}
             - {value: 'function myfunction(Object $a)', correct: false}
     -
-        question: | What does the following function do, when passed two integer values for $p and $q?
+        question: |
+                       What does the following function do, when passed two integer values for $p and $q?
                        function magic($p, $q) {
                             return ($q == 0) ? $p: magic($q, $p % $q);
                         }
@@ -71,7 +72,8 @@ questions:
             - {value: 'Determines the greatest common divisor between them.', correct: true}
             - {value: 'Calculates the modulus between the two.', correct: false}
     -
-        question: | What would go in place of ?????? below to make this script execute without a fatal error?
+        question: |
+                       What would go in place of ?????? below to make this script execute without a fatal error?
                        $a = 1;
                        $b = 0;
                        /* ?????? */
