@@ -1,5 +1,5 @@
 {
-    "name": "mickaelandrieu/php-pack",
+    "name": "certificationy/php-pack",
     "type": "certificationy-pack",
     "description": "A series of questions to prepare for the Zend PHP5.5 certification",
     "keywords": ["Zend", "PHP5.5", "certification", "test", "exam"],
