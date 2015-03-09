@@ -84,3 +84,27 @@ questions:
             - {value: 'stop();', correct: false}
             - {value: '__halt_compiler();', correct: true}
             - {value: 'exit();', correct: true}
+    -
+        question: What is the difference between the ``include`` and ``require`` language constructs?
+        answers:
+            - {value: 'Require constructs can''t be used with URL filenames', correct: false}
+            - {value: 'Include constructs cause a fatal error if the file doesn''t exist', correct: false}
+            - {value: 'There is no difference other than the name', correct: false}
+            - {value: 'Include constructs are processed at run time; require constructs are processed at compile time', correct: false}
+            - {value: 'Require constructs cause a fatal error if the file can''t be read', correct: true}
+    -
+        question: How does one access standard input/output and error streams in PHP 5?
+        answers:
+            - {value: 'STDIN, STDOUT and STDERR constants', correct: true}
+            - {value: 'Use stdin(), stdout() and stderr() functions', correct: false}
+            - {value: 'PHP::STDIN, PHP::STDOUT and PHP::STDERR class constants', correct: false}
+            - {value: 'Use PHP::stdin(), PHP::stdout() and PHP::stderr() class functions', correct: false}
+    -
+        question: How to access standard error stream in PHP ?
+        answers:
+            - {value: '$stderr = STDERR;', correct: true}
+            - {value: '$stderr = fopen("php://stderr", "w");', correct: true}
+            - {value: '$stderr = stderr("w")', correct: false}
+            - {value: '$stderr = fwrite("php://stderr");', correct: true)}
+
+
