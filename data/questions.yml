@@ -107,4 +107,24 @@ questions:
             - {value: '$stderr = stderr("w")', correct: false}
             - {value: '$stderr = fwrite("php://stderr");', correct: true)}
 
-
+        question: |
+                       What would you replace ??????? with, below, to make the string Hello, World! be displayed?
+                       function myfunction() {
+                           /* ??????? */
+                           print $string;
+                       }
+                       myfunction("Hello, World!");
+        answers:
+            - {value: 'There is no way to do this.', correct: false}
+            - {value: '$string = $argv[1];', correct: false}
+            - {value: '$string = $_ARGV[0];', correct: false}
+            - {value: 'list($string) = func_get_args();', correct: true}
+            - {value: '$string = get_function_args();', correct: false}
+    -
+        question: 'For an arbitrary string $mystring, which of the following checks will correctly determine if the string PHP exists within it?'
+        answers:
+            - {value: 'if(strpos($mystring, "PHP") !== false)', correct: true}
+            - {value: 'if(!strpos($mystring, "PHP))', correct: false}
+            - {value: 'if(strpos($mystring, "PHP") === true', correct: false}
+            - {value: 'if(strloc($mystring, "PHP") == true', correct: false}
+            - {value: 'if(strloc($mystring, "PHP") === false)', correct: false}
