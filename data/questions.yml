@@ -472,6 +472,101 @@ questions:
             - {value: '0 => 0, 1 => 2, 2 => 3, 3 => x, 4 => 4', correct: true}
             - {value: '0 => x, 1 => 0, 2 => 1, 3 => 2, 4 => 3', correct: false}
             - {value: '1 => 1, 3 => x, 2 => 2, 4 => 4', correct: false}
+    -
+        question: 'Which function would you use to add an element to the beginning of an array?'
+        answers:
+            - {value: 'array_shift()', correct: false}
+            - {value: 'array_push()', correct: false}
+            - {value: '$array[0] = "value";', correct: false}
+            - {value: 'array_unshift()', correct: true}
+            - {value: 'array_pop()', correct: false}
+    -
+        question: |
+                    Which key will not be displayed from the following code block?
+                    $array = array('a' => 'John',
+                                   'b' => 'Coggeshall',
+                                   'c' => array('d' => 'John',
+                                                'e' => 'Smith'));
+                    function display($item, $key) {
+                        print "$key => $item\n";
+                    }
+                    array_walk_recursive($array, "display");
+        answers:
+            - {value: 'd', correct: false}
+            - {value: 'c', correct: true}
+            - {value: 'b', correct: false}
+            - {value: 'a', correct: false}
+            - {value: 'They all will be displayed', correct: false}
+    -
+        question: |
+                    What is the result of the following code snippet?
+                    $array = array('a' => 'John',
+                                   'b' => 'Coggeshall',
+                                   'c' => array('d' => 'John',
+                                                'e' => 'Smith'));
+                    function something($array) {
+                        extract($array);
+                        return $c['e'];
+                    }
+                    print something($array);
+        answers:
+            - {value: 'Smith', correct: true}
+            - {value: 'A PHP Warning', correct: false}
+            - {value: 'Coggeshall', correct: false}
+            - {value: 'NULL', correct: false}
+            - {value: 'Array', correct: false}
+    -
+        question: |
+                    What should go in the missing line ????? below to produce the output shown?
+                    $array_one = array(1,2,3,4,5);
+                    $array_two = array('A', 'B', 'C', 'D', 'E');
+
+                    ???????
+
+                    print_r($array_three);
+
+                    Result:
+                    Array
+                    (
+                        [5] => A
+                        [4] => B
+                        [3] => C
+                        [2] => D
+                        [1] => E
+                    )
+        answers:
+            - {value: '$array_three = array_merge(array_reverse($array_one), $array_two);', correct: false}
+            - {value: '$array_three = array_combine($array_one, $array_two);', correct: false}
+            - {value: '$array_three = array_combine(array_reverse($array_one), $array_two);	', correct: true}
+            - {value: '$array_three = array_merge($array_one, $array_two);', correct: false}
+            - {value: '$array_three = array_reverse($array_one) + $array_two;', correct: false}
+    -
+        question: 'Which of the following functions are used with the internal array pointer to accomplish an action?'
+        answers:
+            - {value: 'key', correct: true}
+            - {value: 'forward', correct: false}
+            - {value: 'prev', correct: true}
+            - {value: 'current', correct: true}
+            - {value: 'next', correct: next}
+    -
+        question: |
+                    Given the following array:
+                    $array = array(1,1,2,3,4,4,5,6,6,6,6,3,2,2,2);
+                    The fastest way to determine the total number a particular value appears in the array is to use which function?
+        answers:
+            - {value: 'array_total_values', correct: false}
+            - {value: 'array_count_values', correct: true}
+            - {value: 'A foreach loop', correct: false}
+            - {value: 'count', correct: false}
+            - {value: 'a for loop', correct: false}
+    -
+        question: 'Which of the following is not a valid fopen() access mode:'
+        answers:
+            - {value: 'b', correct: true}
+            - {value: 'x', correct: false}
+            - {value: 'a', correct: false}
+            - {value: 'w', correct: false}
+            - {value: 'r+', correct: false}
 
 
 
