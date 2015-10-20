@@ -560,6 +560,284 @@ questions:
             - {value: 'count', correct: false}
             - {value: 'a for loop', correct: false}
     -
+        question: 'The ____ construct is particularly useful to assign your own variable names to values within an array.'
+        answers:
+            - {value: 'array_get_variables', correct: false}
+            - {value: 'current', correct: false}
+            - {value: 'each', correct: false}
+            - {value: 'import_variables', correct: false}
+            - {value: 'list', correct: true}
+    -
+        question: | 
+                    The following code snippet displays what for the resultant array?
+                    $a = array(1 => 0, 3 => 2, 4 => 6);
+                    $b = array(3 => 1, 4 => 3, 6 => 4);
+                    print_r(array_intersect($a, $b));
+        answers:
+            - {value: '1 => 0', correct: false}
+            - {value: '1 => 3, 3 => 1, 4 => 3', correct: false}
+            - {value: '3 => 1, 3=> 2, 4 => 3, 4=> 6', correct: false}
+            - {value: '1 => 0, 3 => 2, 4 => 6', correct: false}
+            - {value: 'An empty Array', correct: true}
+    -
+        question: 'Which of the following are not valid ways to embed a variable into a string?'
+        answers:
+            - {value: '$a = "Value: $value->getValue()";', correct: true}
+            - {value: '$a = "Value: {$value}";', correct: false}
+            - {value: '$a = ''Value: $value'';', correct: true}
+            - {value: '$a = "Value: $value";', correct: false}
+            - {value: '$a = "Value: {$value[''val'']}";', correct: false}
+    -
+        question: | 
+                    What variable reference would go in the spots indcated by ????? in the code segment below?
+                    $msg = "The Quick Brown Foxed Jumped Over the Lazy Dog";
+                    $state = true;
+                    $retval = "";
+                    for ($i = 0; (isset(??????)); $i++) {
+                        if($state) {
+                            $retval .= strtolower(?????);
+                        } else {
+                            $retval .= strtoupper(?????);
+                        }
+                        $state = !$state;
+                    }
+                    print $retval;
+        answers:
+            - {value: '$msg{$i}', correct: true}
+            - {value: 'ord($msg);', correct: false}
+            - {value: 'chr($msg);', correct: false}
+            - {value: 'substr($msg, $i, 2);', correct: false}
+    -
+        question: | 
+                    Given the two values below, which of the following possiblities will print 10 foos20 bars?
+                    $var1 = "10 foos";
+                    $var2 = "20 bars";
+                    print ???????;
+        answers:
+            - {value: 'None of the above', correct: false}
+            - {value: 'implode("", array($var1,$var2));', correct: true}
+            - {value: '$var1 . $var2', correct: true}
+            - {value: '$var1 + $var2', correct: false}
+            - {value: 'All of the above', correct: false}
+    -
+        question: 'When comparing two strings, which of the following is acceptable?'
+        answers:
+            - {value: '$a === $b;', correct: true}
+            - {value: 'strcasecmp($a, $b);', correct: true}
+            - {value: 'strcmp($a, $b);', correct: true}
+            - {value: '$a == $b;', correct: true}
+            - {value: 'str_compare($a, $b);', correct: false}
+    -
+        question: 'A fingerprint of a string can be determined using which of the following?'
+        answers:
+            - {value: 'md5()', correct: true}
+            - {value: 'hash()', correct: false}
+            - {value: 'fingerprint()', correct: false}
+            - {value: 'None of the above', correct: false}
+    -
+        question: 'Which of the following is the best way to split a string on the "-=-" pattern?'
+        answers:
+            - {value: 'They all are equally proper methods', correct: false}
+            - {value: 'str_split($string, strpos($string, "-=-"))', correct: false}
+            - {value: 'preg_split("-=-", $string);', correct: false}
+            - {value: 'explode("-=-", $string);', correct: true}
+    -
+        question: | 
+                    What is the output of the following code?
+                    $string = "14302";
+                    $string[$string[2]] = "4";
+                    print $string;
+        answers:
+            - {value: '14304', correct: false}
+            - {value: '14342', correct: true}
+            - {value: '44302', correct: false}
+            - {value: '14402', correct: false}
+            - {value: 'Array', correct: false}
+    -
+        question: 'Which function is best suited for removing markup tags from a string?'
+        answers:
+            - {value: 'strip_markup', correct: false}
+            - {value: 'strip_tags', correct: true}
+            - {value: 'str_replace', correct: false}
+            - {value: 'preg_replace', correct: false}
+            - {value: 'preg_strip', correct: false}
+    -
+        question: 'Identify the best approach to compare to variables in a binary-safe fashion'
+        answers:
+            - {value: 'Both strcmp() and $a === $b', correct: true}
+            - {value: '$a == $b', correct: false}
+            - {value: '$a === $b', correct: false}
+            - {value: 'str_compare()', correct: false}
+            - {value: 'strstr()', correct: false}
+    -
+        question: | 
+                    Consider the following script:
+                    $oranges = 10;
+                    $apples = 5;
+                    $string = "I have %d apples and %d oranges";
+                    ???????
+
+                    What could be placed in place of ?????? to output the string:
+                    "I have 5 apples and 10 oranges"
+        answers:
+            - {value: 'str_format($string, $apples, $oranges);', correct: false}
+            - {value: 'print($string, $apples, $oranges);', correct: false}
+            - {value: 'printf($string, $apples, $oranges);', correct: true}
+            - {value: 'print sprintf($apples, $oranges);', correct: false}
+            - {value: 'sprintf($string, $oranges, $apples);', correct: false}
+        question: | 
+                    Which functions would be needed to translate the following string:
+                    I love PHP 5
+                    to the following?
+                    5 PHP EVOL I
+        answers:
+            - {value: 'mirror()', correct: false}
+            - {value: 'strtoupper()', correct: true}
+            - {value: 'toupper()', correct: false}
+            - {value: 'str_reverse()', correct: false}
+            - {value: 'strrev()', correct: true}
+    -
+        question: | 
+                    Which string does the following PCRE regular expression match?
+                    $regex = "/^([a-z]{5})[1-5]+([a-z]+)/";
+        answers:
+            - {value: 'None of the above', correct: false}
+            - {value: Hello34262343goodbye', correct: false}
+            - {value: 'frank12345abc', correct: true}
+            - {value: 'hello34212343goodbye', correct: true}
+            - {value: 'abcdefghi12345abc', correct: false}
+    -
+        question: 'Which PCRE regular expression will match the string PhP5-rocks'
+        answers:
+            - {value: '/^[hp1-5]*\-.*/i', correct: true}
+            - {value: '/[hp1-5]*\-.?/', correct: false}
+            - {value: '/[hp][1-5]*\-.*/', correct: false}
+            - {value: '/[PhP]{3}[1-5]{2,3}\-.*$/', correct: false}
+            - {value: '/[a-z1-5\-]*/', correct: false}
+    -
+        question: 'If regular expressions must be used, in general which type of regular expression functions available to PHP is preferred for performance reasons?'
+        answers:
+            - {valie: 'strtok() using regular expressions', correct: false}
+            - {valie: 'preg_* regular expression functions', correct: true}
+            - {valie: 'parse_str() using regular expressions', correct: false}
+            - {valie: 'strregex* regular expression functions', correct: false}
+            - {valie: 'ereg* regular expression functions', correct: false}
+    -
+        question: 'To destroy one variable within a PHP session you should use which method in PHP 5?'
+        answers:
+            - {valie: 'Unset the variable in $HTTP_SESSION_VARS', correct: false}
+            - {valie: 'Use the session_destroy() function', correct: false}
+            - {valie: 'Use the session_unset() function', correct: false}
+            - {valie: 'unset the variable in $_SESSION using unset()', correct: true}
+            - {valie: 'Any of the above are acceptable in PHP 5', correct: false}
+    -
+        question: 'If you would like to store your session in the database, you would do which of the following?'
+        answers:
+            - {value: 'It requires a custom PHP extension to change the session handler', correct: false}
+            - {value: 'Implement the session_set_save_handler() function', correct: false}
+            - {value: 'Create functions for each session handling step and use session_set_save_handler() to override PHP''s internal settings', correct: true}
+            - {value: 'Configure the session.save_handler INI directive to your session class', correct: false}
+    -
+        question: 'To destroy a PHP session completely, one must which of the following?'
+        answers:
+            - {value: 'Regenerate the session ID using session_regenerate_id()', correct: false}
+            - {value: 'If cookies are used, destroy it', correct: true}
+            - {value: 'Use session_demolish() to completely destroy the session', correct: false}
+            - {value: 'Change the session name using session_name()', correct: false}
+            - {value: 'Destroy the session data using session_destroy()', correct: true}
+    -
+        question: 'If you would like to change the session ID generation function, which of the following is the best approach for PHP 5?'
+        answers:
+            - {value: 'Set the session.hash_function INI configuration directive', correct: true}
+            - {value: 'Use the session_set_id_generator() function', correct: false}
+            - {value: 'Set the session id by force using the session_id() function', correct: false}
+            - {value: 'Use the session_regenerate_id() function', correct: false}
+            - {value: 'Implement a custom session handler', correct: false}
+    -
+        question: | 
+                    Consider the following HTML fragement:
+                    <select name="?????" multiple>
+                    <option value="1">Item #1</option>
+                    <!-- ... more options ... -->
+                    </select>
+                    Which of the following name attributes should be used to capture all of the data from the user in PHP?
+        answers:
+            - {value: 'myselectbox=array()', correct: false}
+            - {value: 'myselectbox[]', correct: true}
+            - {value: 'myselectbox[''multiple'']', correct: false}
+            - {value: 'myselectbox{''multiple''}', correct: false}
+            - {value: 'myselectbox', correct: false}
+    -
+        question: 'When uploading a file using HTTP, which variable can be used to locate the file on PHP''s local filesystem?'
+        answers:
+            - {value: 'None of the above', correct: false}
+            - {value: '$_FILES[''fieldname''][''tmp_name'']', correct: true}
+            - {value: '$_FILES[''fieldname'']', correct: false}
+            - {value: '$_FILES[''fieldname''][0][''filename'']', correct: false}
+            - {value: '$_FILES[''fieldname''][''filename'']', correct: false}
+    -
+        question: 'To force a user to redirect to a new URL from within a PHP 5 script, which of the following should be used?'
+        answers:
+            - {value: 'Send a HTTP "Location:" header', correct: true}
+            - {value: 'Use the HTML <redirect> Tag', correct: false}
+            - {value: 'Send a HTTP "Forward:" header', correct: false}
+            - {value: 'Use the redirect() function', correct: false}
+    -
+        question: 'Setting a cookie on the client in PHP 5 can be best accomplished by:'
+        answers:
+            - {value: 'Use the add_cookie() function', correct: false}
+            - {value: 'Use the setcookie() function', correct: true}
+            - {value: 'Use the the apache_send_header() function', correct: false}
+            - {value: 'Setting a variable in the $_COOKIE superglobal', correct: false}
+    -
+        question: 'How does one create a cookie which will exist only until the browser session is terminated?'
+        answers:
+            - {value: 'You cannot create cookies that expire when the browser session is terminated', correct: false}
+            - {value: 'Setting the expiration time for a cookie to a time in the distant future', correct: false}
+            - {value: 'Do not provide a cookie expiration time', correct: true}
+            - {value: 'Enable Cookie Security', correct: false}
+            - {value: 'Set a cookie without a domain', correct: false}
+    -
+        question: 'Setting a HTTP cookie on the client which is not URL-encoded is done how in PHP 5?'
+        answers:
+            - {value: 'Use the setrawcookie() function', correct: true}
+            - {value: 'Set the cookies.urlencode INI directive to false', correct: false}
+            - {value: 'Use urldecode() on the return value of setcookie()', correct: false}
+            - {value: 'Setting the $no_encode parameter of setcookie() to a boolean ''true''', correct: false}
+            - {value: 'All cookies must be URL encoded', correct: false}
+    -
+        question: 'During an HTTP authentication, how does one determine the username and password provided by the browser?'
+        answers:
+            - {value: 'Parse the HTTP headers manually using http_get_headers()', correct: false}
+            - {value: 'Use the get_http_username() and get_http_password() functions', correct: false}
+            - {value: 'Use the $_SERVER[''HTTP_USER''] and $_SERVER[''HTTP_PASSWORD''] variables', correct: false}
+            - {value: 'Use the $_SERVER[''PHP_AUTH_USER''] and $_SERVER[''PHP_AUTH_PW''] variables', correct: true}
+            - {value: 'Parse the $_SERVER[''REQUEST_URI''] variable', correct: false}
+    -
+        question: | 
+                    Consider the following function:
+                    function redirect($url) {
+                        // Check to make sure we haven't already sent
+                        // the header:
+                        if(/*???????*/) {
+                            header("Location: $url");
+                        }
+                    }
+                    What conditional should replace the ????? above?
+        answers:
+            - {value: '!in_array("Location: $url", headers_list())', correct: true}
+            - {value: '!header_exists("Location: $url")', correct: false}
+            - {value: '!header_location($url)', correct: false}
+            - {value: ' $_SERVER[''HTTP_LOCATION''] != $url', correct: false}
+    -
+        question: 'One can ensure that headers can always be sent from a PHP script by doing what?'
+        answers:
+            - {value: 'Enable header buffering in PHP 5', correct: false}
+            - {value: 'Set the header.force INI directive to true', correct: false}
+            - {value: 'Enable output buffering in PHP 5', correct: true}
+            - {value: 'There is no way to ensure that headers can always be set, they must always be checked', correct: false}
+            - {value: 'None of the above', correct: false}
+    -
         question: 'Which of the following is not a valid fopen() access mode:'
         answers:
             - {value: 'b', correct: true}
