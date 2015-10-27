@@ -717,19 +717,19 @@ questions:
     -
         question: 'If regular expressions must be used, in general which type of regular expression functions available to PHP is preferred for performance reasons?'
         answers:
-            - {valie: 'strtok() using regular expressions', correct: false}
-            - {valie: 'preg_* regular expression functions', correct: true}
-            - {valie: 'parse_str() using regular expressions', correct: false}
-            - {valie: 'strregex* regular expression functions', correct: false}
-            - {valie: 'ereg* regular expression functions', correct: false}
+            - {value: 'strtok() using regular expressions', correct: false}
+            - {value: 'preg_* regular expression functions', correct: true}
+            - {value: 'parse_str() using regular expressions', correct: false}
+            - {value: 'strregex* regular expression functions', correct: false}
+            - {value: 'ereg* regular expression functions', correct: false}
     -
         question: 'To destroy one variable within a PHP session you should use which method in PHP 5?'
         answers:
-            - {valie: 'Unset the variable in $HTTP_SESSION_VARS', correct: false}
-            - {valie: 'Use the session_destroy() function', correct: false}
-            - {valie: 'Use the session_unset() function', correct: false}
-            - {valie: 'unset the variable in $_SESSION using unset()', correct: true}
-            - {valie: 'Any of the above are acceptable in PHP 5', correct: false}
+            - {value: 'Unset the variable in $HTTP_SESSION_VARS', correct: false}
+            - {value: 'Use the session_destroy() function', correct: false}
+            - {value: 'Use the session_unset() function', correct: false}
+            - {value: 'unset the variable in $_SESSION using unset()', correct: true}
+            - {value: 'Any of the above are acceptable in PHP 5', correct: false}
     -
         question: 'If you would like to store your session in the database, you would do which of the following?'
         answers:
