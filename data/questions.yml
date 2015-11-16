@@ -196,11 +196,11 @@ questions:
     -
         question: 'What are the three access modifiers that you can use in PHP objects?'
         answers:
-            - {valuse: 'protected', correct: true}
-            - {valuse: 'public', correct: true}
-            - {valuse: 'static', correct: false}
-            - {valuse: 'private', correct: true}
-            - {valuse: 'final', correct: false}
+            - {value: 'protected', correct: true}
+            - {value: 'public', correct: true}
+            - {value: 'static', correct: false}
+            - {value: 'private', correct: true}
+            - {value: 'final', correct: false}
     -
         question: 'When checking to see if two variables contain the same instance of an object, which of the following comparisons should be used?'
         answers:
