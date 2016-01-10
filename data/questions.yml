@@ -160,20 +160,6 @@ questions:
             - {value: '70', correct: false}
 
     -
-       question: |
-                    What would you replace ??????? with, below, to make the string Hello, World! be displayed?
-                    function myfunction() {
-                        /* ??????? */
-                        print $string;
-                    }
-                    myfunction("Hello, World!");
-       answers:
-            - {value: 'There is no way to do this', correct: false}
-            - {value: '$string = $argv[1];', correct: false}
-            - {value: '$string = $_ARGV[0];', correct: false}
-            - {value: 'list($string) = func_get_args();', correct: true}
-            - {value: '$string = get_function_args()', correct: false}
-    -
         question: |
                     What is the output of the following function?
                     function &find_variable(&$one, &$two, &$three) {
