@@ -294,7 +294,7 @@ questions:
         answers:
             - {value: '__get($variable)', correct: true}
             - {value: '__call($method, $params)', correct: true}
-            - {value: '__get($variable)', correct: false}
+            - {value: '__destruct()', correct: false}
             - {value: '__set($variable, $value)', correct: true}
             - {value: '__call($method)', correct: false}
     -
