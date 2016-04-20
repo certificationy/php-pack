@@ -332,11 +332,11 @@ questions:
     -
         question: ' Which of the following list of potential data sources should be considered trusted?'
         answers:
-            - {value: 'None of the above', correct: true}
             - {value: '$_ENV', correct: false}
             - {value: '$_GET', correct: false}
             - {value: '$__COOKIE', correct: false}
             - {value: '$_SERVER', correct: false}
+            - {value: 'None of the above', correct: true}
     -
         question: |
                     Consider the following code:
@@ -378,11 +378,11 @@ questions:
     -
         question: 'When implementing a permissions system for your Web site, what should always be done with regards to the session?'
         answers:
-            - {value: 'None of the above', correct: false}
             - {value: 'You should not implement permission systems using sessions', correct: false}
             - {value: 'Sessions should be cleared of all data and re-populated', correct: false}
             - {value: 'The session key should be regenerated', correct: true}
             - {value: 'The session should be destroyed', correct: false}
+            - {value: 'None of the above', correct: false}
     -
         question: 'Which of the following is not valid syntax for creating a new array key?'
         answers:
@@ -600,11 +600,11 @@ questions:
                     $var2 = "20 bars";
                     print ???????;
         answers:
-            - {value: 'None of the above', correct: false}
             - {value: 'implode("", array($var1,$var2));', correct: true}
             - {value: '$var1 . $var2', correct: true}
             - {value: '$var1 + $var2', correct: false}
             - {value: 'All of the above', correct: false}
+            - {value: 'None of the above', correct: false}
     -
         question: 'When comparing two strings, which of the following is acceptable?'
         answers:
@@ -687,11 +687,11 @@ questions:
                     Which string does the following PCRE regular expression match?
                     $regex = "/^([a-z]{5})[1-5]+([a-z]+)/";
         answers:
-            - {value: 'None of the above', correct: false}
             - {value: Hello34262343goodbye', correct: false}
             - {value: 'frank12345abc', correct: true}
             - {value: 'hello34212343goodbye', correct: true}
             - {value: 'abcdefghi12345abc', correct: false}
+            - {value: 'None of the above', correct: false}
     -
         question: 'Which PCRE regular expression will match the string PhP5-rocks'
         answers:
@@ -756,11 +756,11 @@ questions:
     -
         question: 'When uploading a file using HTTP, which variable can be used to locate the file on PHP''s local filesystem?'
         answers:
-            - {value: 'None of the above', correct: false}
             - {value: '$_FILES[''fieldname''][''tmp_name'']', correct: true}
             - {value: '$_FILES[''fieldname'']', correct: false}
             - {value: '$_FILES[''fieldname''][0][''filename'']', correct: false}
             - {value: '$_FILES[''fieldname''][''filename'']', correct: false}
+            - {value: 'None of the above', correct: false}
     -
         question: 'To force a user to redirect to a new URL from within a PHP 5 script, which of the following should be used?'
         answers:
