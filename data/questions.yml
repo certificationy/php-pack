@@ -192,8 +192,8 @@ questions:
         answers:
             - {value: 'if($obj1->equals($obj2) && ($obj1 instanceof $obj2))', correct: false}
             - {value: 'if($obj1->equals($obj2))', correct: false}
-            - {value: 'if($obj1 instanceof $obj2)', correct: true}
-            - {value: 'if($obj1 == $obj2)', correct: false}
+            - {value: 'if($obj1 instanceof $obj2)', correct: false}
+            - {value: 'if($obj1 === $obj2)', correct: true}
     -
         question: 'In PHP 5 you can use the ______ operator to ensure that an object is of a particular type. You can also use _______ in the function declaration.'
         answers:
