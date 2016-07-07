@@ -54,8 +54,8 @@ questions:
     -
         question: What is the best way to ensure that a user-defined function is always passed an object as its single parameter?
         answers:
-            - {value: 'function myfunction(stdClass $a)', correct: true}
-            - {value: 'function myfunction($a = stdClass)', correct: false}
+            - {value: 'function myfunction(stdClass $a)', correct: false}
+            - {value: 'function myfunction(callable $a)', correct: true}
             - {value: 'Use is_object() within the function', correct: false}
             - {value: 'There is no way to ensure the parameter will be an object.', correct: false}
             - {value: 'function myfunction(Object $a)', correct: false}
