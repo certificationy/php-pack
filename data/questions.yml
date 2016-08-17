@@ -527,13 +527,14 @@ questions:
             - {value: '$array_three = array_merge($array_one, $array_two);', correct: false}
             - {value: '$array_three = array_reverse($array_one) + $array_two;', correct: false}
     -
-        question: 'Which of the following functions are used with the internal array pointer to accomplish an action?'
+        question: 'Which of the following functions affects internal array pointer position?'
         answers:
-            - {value: 'key', correct: true}
-            - {value: 'forward', correct: false}
+            - {value: 'key', correct: false}
+            - {value: 'end', correct: true}
             - {value: 'prev', correct: true}
-            - {value: 'current', correct: true}
-            - {value: 'next', correct: next}
+            - {value: 'current', correct: false}
+            - {value: 'next', correct: true}
+            - {value: 'reset', correct: true}
     -
         question: |
                     Given the following array:
