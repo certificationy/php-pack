@@ -1,13 +1,13 @@
 category: PHP5.5
 questions:
     -
-        question: 'Which of the following tags are an acceptable way to begin a PHP Code block?'
+        question: 'Which of the following tags are an acceptable way to begin a PHP 5 Code block?'
         answers:
-            - {value: '<SCRIPT LANGUAGE="php">',         correct: true}
-            - {value: '<!',                                                   correct: true}
-            - {value: '<%',                                                 correct: true}
-            - {value: '<?',                                                  correct: true}
-    -
+            - {value: '<SCRIPT LANGUAGE="php">',                              correct: true}
+            - {value: '<!',                                                   correct: false}
+            - {value: '<%',                                                   correct: true}
+            - {value: '<?',                                                   correct: true}
+     -
         question: 'Which of the following are valid PHP variables?'
         answers:
             - {value: '@$foo',      correct: true}
