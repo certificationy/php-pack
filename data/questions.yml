@@ -223,7 +223,7 @@ questions:
         question: 'How can you modify the copy of an object during a clone operation?'
         answers:
             - {value: 'Put the logic in the object''s constructor to alter the values', correct: false}
-            - {value: 'Implment your own function to do object copying', correct: false}
+            - {value: 'Implement your own function to do object copying', correct: false}
             - {value: 'Implement the object''s __clone() method', correct: true}
             - {value: 'Implement __get() and __set() methods with the correct logic', correct: false}
             - {value: 'Implement the __copy() method with the correct logic', correct: false}
@@ -596,7 +596,7 @@ questions:
             - {value: 'substr($msg, $i, 2);', correct: false}
     -
         question: | 
-                    Given the two values below, which of the following possiblities will print 10 foos20 bars?
+                    Given the two values below, which of the following possibilities will print 10 foos20 bars?
                     $var1 = "10 foos";
                     $var2 = "20 bars";
                     print ???????;
@@ -742,7 +742,7 @@ questions:
             - {value: 'Implement a custom session handler', correct: false}
     -
         question: | 
-                    Consider the following HTML fragement:
+                    Consider the following HTML fragment:
                     <select name="?????" multiple>
                     <option value="1">Item #1</option>
                     <!-- ... more options ... -->
