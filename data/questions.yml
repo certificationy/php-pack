@@ -649,7 +649,7 @@ questions:
             - {value: 'preg_replace', correct: false}
             - {value: 'preg_strip', correct: false}
     -
-        question: 'Identify the best approach to compare to variables in a binary-safe fashion'
+        question: 'Identify the best approach to compare two variables in a binary-safe fashion'
         answers:
             - {value: 'Both strcmp() and $a === $b', correct: true}
             - {value: '$a == $b', correct: false}
