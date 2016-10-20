@@ -10,5 +10,9 @@
             "name": "Mickaël Andrieu",
             "email": "andrieu.travail@gmail.com"
         }
-    ]
+    ],
+    "require-dev": {
+        "certificationy/yaml-linter": "dev-master"
+    },
+    "minimum-stability" : "dev"
 }
