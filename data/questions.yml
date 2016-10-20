@@ -7,7 +7,7 @@ questions:
             - {value: '<!',                                                   correct: false}
             - {value: '<%',                                                   correct: true}
             - {value: '<?',                                                   correct: true}
-     -
+    -
         question: 'Which of the following are valid PHP variables?'
         answers:
             - {value: '@$foo',      correct: true}
