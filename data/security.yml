@@ -1,0 +1,72 @@
+category: Security
+questions:
+    -
+        question: 'Which php.ini directive should be disabled to prevent the execution of a remote PHP script via an include or require construct?'
+        answers:
+            - {value: 'You cannot disable remote PHP script execution', correct: false}
+            - {value: 'curl.enabled', correct: false}
+            - {value: 'allow_remote_url', correct: false}
+            - {value: 'allow_url_fopen', correct: true}
+            - {value: 'allow_require', correct: false}
+    -
+        question: 'Which of the following php.ini directives should be disabled to improve the outward security of your application?'
+        answers:
+            - {value: 'safe_mode', correct: false}
+            - {value: 'magic_quotes_gpc', correct: true}
+            - {value: 'register_globals', correct: true}
+            - {value: 'display_errors', correct: true}
+            - {value: 'allow_url_fopen', correct: true}
+    -
+        question: ' Which of the following list of potential data sources should be considered trusted?'
+        answers:
+            - {value: '$_ENV', correct: false}
+            - {value: '$_GET', correct: false}
+            - {value: '$__COOKIE', correct: false}
+            - {value: '$_SERVER', correct: false}
+            - {value: 'None of the above', correct: true}
+    -
+        question: |
+                    Consider the following code:
+                    session_start();
+                    if(!empty($_REQUEST['id'])
+                       && !empty($_REQUEST['quantity'])) {
+                      $id = scrub_id($_REQUEST['id']);
+                      $quantity = scrub_quantity($_REQUEST['quantity'])
+                      $_SESSION['cart'][] = array('id' => $id,
+                                                  'quantity' => $quantity)
+                    }
+                    /* .... */
+                    What potential security hole would this code snippet produce?
+        answers:
+            - {value: 'Cross-Site Scripting Attack', correct: false}
+            - {value: 'There is no security hole in this code', correct: true}
+            - {value: 'Code Injection', correct: false}
+            - {value: 'SQL Injection', correct: false}
+            - {value: 'Cross-Site Request Forgery', correct: false}
+    -
+        question: 'What is the best measure one can take to prevent a cross-site request forgery?'
+        answers:
+            - {value: 'Disallow requests from outside hosts', correct: false}
+            - {value: 'Add a secret token to all form submissions', correct: true}
+            - {value: 'Turn off allow_url_fopen in php.ini', correct: false}
+            - {value: 'Filter all output', correct: false}
+            - {value: 'Filter all input', correct: false}
+    -
+        question: |
+                    Consider the following code:
+                    header("Location: {$_GET['url']}\");
+                    Which of the following values of $_GET['url'] would cause session fixation?
+        answers:
+            - {value: 'Session Fixation is not possible with this code snippet', correct: false}
+            - {value: 'http://www.zend.com/?PHPSESSID=123', correct: true}
+            - {value: 'PHPSESSID%611243', correct: false}
+            - {value: 'Set-Cookie%3A+PHPSESSID%611234', correct: false}
+            - {value: 'http%3A%2F%2Fwww.zend.com%2F%0D%0ASet-Cookie%3A+PHPSESSID%611234', correct: false}
+    -
+        question: 'When implementing a permissions system for your Web site, what should always be done with regards to the session?'
+        answers:
+            - {value: 'You should not implement permission systems using sessions', correct: false}
+            - {value: 'Sessions should be cleared of all data and re-populated', correct: false}
+            - {value: 'The session key should be regenerated', correct: true}
+            - {value: 'The session should be destroyed', correct: false}
+            - {value: 'None of the above', correct: false}
