@@ -1,0 +1,47 @@
+category: Databases
+questions:
+    -
+        question: |
+                    Consider the following table data and PHP code. What is the outcome?
+                    Table data (table name "users" with primary key "id"):
+
+                    id      name        email
+                    ------- ----------- -------------------
+                    1       anna        alpha@example.com
+                    2       betty       beta@example.org
+                    3       clara       gamma@example.net
+                    5       sue         sigma@example.info
+
+                    PHP code (assume the PDO connection is correctly established):
+
+                    $dsn = 'mysql:host=localhost;dbname=exam';
+                    $user = 'username';
+                    $pass = '********';
+                    $pdo = new PDO($dsn, $user, $pass);
+                    $cmd = "SELECT * FROM users WHERE id = :id";
+                    $stmt = $pdo->prepare($cmd);
+                    $id = 3;
+                    $stmt->bindParam('id', $id);
+                    $stmt->execute();
+                    $stmt->bindColumn(3, $result);
+                    $row = $stmt->fetch(PDO::FETCH_BOUND);
+        answers:
+            - { value: 'The database will return no rows.', corrent: false }
+            - { value: 'The value of $row will be an array.', corrent: false }
+            - { value: 'The value of $result will be empty.', corrent: false }
+            - { value: "The value of $result will be 'gamma@example.net'.", corrent: true }
+    -
+        question: 'Transactions are used to...'
+        answers:
+            - { value: 'guarantee high performance', correct: false }
+            - { value: 'secure data consistency', correct: true }
+            - { value: 'secure access to the database', correct: false }
+            - { value: 'reduce the database server overhead', correct: false }
+            - { value: 'reduce code size in PHP', correct: false }
+    -
+        question: 'Which technique should be used to speed up joins without changing their results?'
+        answers:
+            - { value: 'Add indices on joined columns', correct: true }
+            - { value: 'Add a WHERE clause', correct: false }
+            - { value: 'Add a LIMIT clause', correct: false }
+            - { value: 'Use an inner join', correct: false }

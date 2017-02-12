@@ -1,0 +1,67 @@
+category: Basics
+questions:
+    -
+        question: 'Which of the following tags are an acceptable way to begin a PHP Code block?'
+        answers:
+            - {value: '<SCRIPT LANGUAGE="php">', correct: true}
+            - {value: '<!', correct: false}
+            - {value: '<%', correct: true}
+            - {value: '<?', correct: true}
+
+    -
+        question: 'Which of the following are valid PHP variables?'
+        answers:
+            - {value: '@$foo', correct: true}
+            - {value: '&$variable', correct: true}
+            - {value: '${0x0}', correct: false}
+            - {value: '$0x0', correct: false}
+    -
+        question: 'What is the best way to iterate and modify every element of an array using PHP 5?'
+        answers:
+            - {value: You cannot modify an array during iteration., correct: false}
+            - {value: 'for($i = 0; $i < count($array); $i++) { /* ... * / }', correct: false}
+            - {value: 'foreach($array as $key => &$val) { /* ... * / }', correct: true}
+            - {value: 'foreach($array as $key => $val) { /* ... * / }', correct: false}
+            - {value: 'while(list($key, $val) = each($array)) { /* ... * / }', correct: false}
+    -
+        question: |
+                       What is the output of the following PHP code?
+                       define("FOO", 10);
+                       $array = [10 => FOO,"FOO" => 20];
+                       print $array[$array[FOO]] * $array["FOO"];
+
+        answers:
+            - {value: FOO, correct: false}
+            - {value: 100, correct: false}
+            - {value: 200, correct: true}
+            - {value: 20, correct: false}
+            - {value: 10, correct: false}
+    -
+        question: |
+                       What is the output of the following PHP script?
+                       $a = 1;
+                       $b = 2.5;
+                       $c = 0xFF;
+                       $d = $b + $c;
+                       $e = $d * $b;
+                       $f = ($d + $e) % $a;
+                       print ($f + $e);
+        answers:
+            - {value: 643.75, correct: true}
+            - {value: 432, correct: false}
+            - {value: 643, correct: false}
+            - {value: 257, correct: false}
+            - {value: 432.75, correct: false}
+    -
+        question: |
+                        What is the output of the following?
+                        $a = 010;
+                        $b = 0xA;
+                        $c = 2;
+
+                        print $a + $b + $c;
+        answers:
+            - {value: '20', correct: true}
+            - {value: '22', correct: false}
+            - {value: '$a is an invalid value', correct: false}
+            - {value: '2', correct: false}

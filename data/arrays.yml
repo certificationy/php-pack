@@ -1,0 +1,184 @@
+category: Arrays
+questions:
+    -
+        question: 'Which of the following is not valid syntax for creating a new array key?'
+        answers:
+            - {value: '$a[] = "value";', correct: false}
+            - {value: '$a{} = "value";', correct: true}
+            - {value: '$a[0] = "value";', correct: false}
+            - {value: '$a{0} = "value";', correct: false}
+            - {value: '$a[$b = 0] = "value";', correct: false}
+    -
+        question: 'Which of the following functions will sort an array in ascending order by value, while preserving key associations?'
+        answers:
+            - {value: 'asort()', correct: true}
+            - {value: 'usort()', correct: false}
+            - {value: 'krsort()', correct: false}
+            - {value: 'ksort()', correct: false}
+            - {value: 'sort()', correct: false}
+    -
+        question: |
+                    What is the output of the following code block?
+                    $a = "The quick brown fox jumped over the lazy dog.";
+                    $b = array_map("strtoupper", explode(" ", $a));
+                    foreach ($b as $value) {
+                        print "$value ";
+                    }
+        answers:
+            - {value: 'THE QUICK BROWN FOX JUMPED OVER THE LAZY DOG.', correct: true}
+            - {value: 'A PHP Error', correct: false}
+            - {value: 'Array Array Array Array Array Array Array Array Array', correct: false}
+    -
+        question: 'Which from the following list is not an appropriate use of an array?'
+        answers:
+            - {value: 'As a list', correct: false}
+            - {value: 'All of these uses are valid	', correct: true}
+            - {value: 'As a Lookup Table', correct: false}
+            - {value: 'A Stack', correct: false}
+            - {value: 'As a hash table', correct: false}
+    -
+        question: |
+                    What is the output of this code snippet?
+                    $a = array(0.001 => 'b', .1 => 'c');
+                    var_dump($a);
+        answers:
+            - {value: 'An empty array', correct: false}
+            - {value: "0.001 => 'b', .1 => c", correct: false}
+            - {value: "0 => 'c'", correct: true}
+            - {value: "'0.001' => 'b', '0.1' => c'", correct: false}
+            - {value: 'A Syntax Error', correct: false}
+    -
+        question: 'Which of the following functions could be used to break a string into an array?'
+        answers:
+            - {value: 'array_split()', correct: false}
+            - {value: 'split()', correct: true}
+            - {value: 'string_split()', correct: false}
+            - {value: 'preg_match_all()', correct: true}
+            - {value: 'explode()', correct: true}
+    -
+        question: 'If you wanted a variable containing the letters A through Z, that allowed you to access each letter independently, which of the following approaches could you use?'
+        answers:
+            - {value: "$str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';", correct: true}
+            - {value: "range('A', 'Z');", correct: true}
+            - {value: 'explode("", "ABCDEFGHIJKLMNOPQRSTUVWXYZ");', correct: false}
+            - {value: 'You would use the ALPHA_ARRAY constant', correct: false}
+            - {value: 'None of the above', correct: false}
+    -
+        question: |
+                    What is the output of the following code block?
+                    $array = array(1 => 0, 2, 3, 4);
+                    array_splice($array, 3, count($array), array_merge(array('x'), array_slice($array, 3)));
+                    var_dump($array);
+        answers:
+            - {value: '1 => 1, 2 => 2, 3 => x, 4 => 4', correct: false}
+            - {value: '0 => 1, 2 => 2, 3 => 3, 4 => 4, x => 3', correct: false}
+            - {value: '0 => 0, 1 => 2, 2 => 3, 3 => x, 4 => 4', correct: true}
+            - {value: '0 => x, 1 => 0, 2 => 1, 3 => 2, 4 => 3', correct: false}
+            - {value: '1 => 1, 3 => x, 2 => 2, 4 => 4', correct: false}
+    -
+        question: 'Which function would you use to add an element to the beginning of an array?'
+        answers:
+            - {value: 'array_shift()', correct: false}
+            - {value: 'array_push()', correct: false}
+            - {value: '$array[0] = "value";', correct: false}
+            - {value: 'array_unshift()', correct: true}
+            - {value: 'array_pop()', correct: false}
+    -
+        question: |
+                    Which key will not be displayed from the following code block?
+                    $array = array('a' => 'John',
+                                   'b' => 'Coggeshall',
+                                   'c' => array('d' => 'John',
+                                                'e' => 'Smith'));
+                    function display($item, $key) {
+                        print "$key => $item\n";
+                    }
+                    array_walk_recursive($array, "display");
+        answers:
+            - {value: 'd', correct: false}
+            - {value: 'c', correct: true}
+            - {value: 'b', correct: false}
+            - {value: 'a', correct: false}
+            - {value: 'They all will be displayed', correct: false}
+    -
+        question: |
+                    What is the result of the following code snippet?
+                    $array = array('a' => 'John',
+                                   'b' => 'Coggeshall',
+                                   'c' => array('d' => 'John',
+                                                'e' => 'Smith'));
+                    function something($array) {
+                        extract($array);
+                        return $c['e'];
+                    }
+                    print something($array);
+        answers:
+            - {value: 'Smith', correct: true}
+            - {value: 'A PHP Warning', correct: false}
+            - {value: 'Coggeshall', correct: false}
+            - {value: 'NULL', correct: false}
+            - {value: 'Array', correct: false}
+    -
+        question: |
+                    What should go in the missing line ????? below to produce the output shown?
+                    $array_one = array(1,2,3,4,5);
+                    $array_two = array('A', 'B', 'C', 'D', 'E');
+
+                    ???????
+
+                    print_r($array_three);
+
+                    Result:
+                    Array
+                    (
+                        [5] => A
+                        [4] => B
+                        [3] => C
+                        [2] => D
+                        [1] => E
+                    )
+        answers:
+            - {value: '$array_three = array_merge(array_reverse($array_one), $array_two);', correct: false}
+            - {value: '$array_three = array_combine($array_one, $array_two);', correct: false}
+            - {value: '$array_three = array_combine(array_reverse($array_one), $array_two);	', correct: true}
+            - {value: '$array_three = array_merge($array_one, $array_two);', correct: false}
+            - {value: '$array_three = array_reverse($array_one) + $array_two;', correct: false}
+    -
+        question: 'Which of the following functions are used with the internal array pointer to accomplish an action?'
+        answers:
+            - {value: 'key', correct: true}
+            - {value: 'forward', correct: false}
+            - {value: 'prev', correct: true}
+            - {value: 'current', correct: true}
+            - {value: 'next', correct: next}
+    -
+        question: |
+                    Given the following array:
+                    $array = array(1,1,2,3,4,4,5,6,6,6,6,3,2,2,2);
+                    The fastest way to determine the total number a particular value appears in the array is to use which function?
+        answers:
+            - {value: 'array_total_values', correct: false}
+            - {value: 'array_count_values', correct: true}
+            - {value: 'A foreach loop', correct: false}
+            - {value: 'count', correct: false}
+            - {value: 'a for loop', correct: false}
+    -
+        question: 'The ____ construct is particularly useful to assign your own variable names to values within an array.'
+        answers:
+            - {value: 'array_get_variables', correct: false}
+            - {value: 'current', correct: false}
+            - {value: 'each', correct: false}
+            - {value: 'import_variables', correct: false}
+            - {value: 'list', correct: true}
+    -
+        question: | 
+                    The following code snippet displays what for the resultant array?
+                    $a = array(1 => 0, 3 => 2, 4 => 6);
+                    $b = array(3 => 1, 4 => 3, 6 => 4);
+                    print_r(array_intersect($a, $b));
+        answers:
+            - {value: '1 => 0', correct: false}
+            - {value: '1 => 3, 3 => 1, 4 => 3', correct: false}
+            - {value: '3 => 1, 3=> 2, 4 => 3, 4=> 6', correct: false}
+            - {value: '1 => 0, 3 => 2, 4 => 6', correct: false}
+            - {value: 'An empty Array', correct: true}

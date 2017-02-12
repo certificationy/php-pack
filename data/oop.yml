@@ -1,0 +1,136 @@
+category: OOP
+questions:
+    -
+        question: 'What are the three access modifiers that you can use in PHP objects?'
+        answers:
+            - {value: 'protected', correct: true}
+            - {value: 'public', correct: true}
+            - {value: 'static', correct: false}
+            - {value: 'private', correct: true}
+            - {value: 'final', correct: false}
+    -
+        question: 'When checking to see if two variables contain the same instance of an object, which of the following comparisons should be used?'
+        answers:
+            - {value: 'if($obj1->equals($obj2) && ($obj1 instanceof $obj2))', correct: false}
+            - {value: 'if($obj1->equals($obj2))', correct: false}
+            - {value: 'if($obj1 instanceof $obj2)', correct: false}
+            - {value: 'if($obj1 === $obj2)', correct: true}
+    -
+        question: 'In PHP 5 you can use the ______ operator to ensure that an object is of a particular type. You can also use _______ in the function declaration.'
+        answers:
+            - {value: 'instanceof, is_a', correct: false}
+            - {value: 'instanceof, type-hinting', correct: true}
+            - {value: 'type, instanceof', correct: false}
+            - {value: '===, type-hinting', correct: false}
+            - {value: '===, is_a', correct: false}
+    -
+        question: |
+                    What is wrong with the following code?
+                    function duplicate($obj) {
+                        $newObj = $obj;
+                        return $newObj;
+                    }
+                    $a = new MyClass();
+                    $a_copy = duplicate($a);
+                    $a->setValue(10);
+                    $a_copy->setValue(20);
+        answers:
+            - {value: 'You must use return &$newObj instead', correct: false}
+            - {value: 'There is nothing wrong with this code', correct: false}
+            - {value: 'duplicate() must accept its parameter by reference', correct: false}
+            - {value: 'You must use the clone operator to make a copy of an object', correct: true}
+            - {value: 'duplicate() must return a reference', correct: false}
+    -
+        question: 'How can you modify the copy of an object during a clone operation?'
+        answers:
+            - {value: 'Put the logic in the object''s constructor to alter the values', correct: false}
+            - {value: 'Implment your own function to do object copying', correct: false}
+            - {value: 'Implement the object''s __clone() method', correct: true}
+            - {value: 'Implement __get() and __set() methods with the correct logic', correct: false}
+            - {value: 'Implement the __copy() method with the correct logic', correct: false}
+    -
+        question: 'What is the primary difference between a method declared as static and a normal method?'
+        answers:
+            - {value: 'Static methods can only be called using the :: syntax and never from an instance', correct: false}
+            - {value: 'Static methods do not provide a reference to $this', correct: true}
+            - {value: 'Static methods cannot be called from within class instances', correct: false}
+            - {value: 'Static methods don''t have access to the self keyword', correct: true}
+            - {value: 'There is no functional difference between a static and non-static method', correct: false}
+
+    -
+        question: |
+                    What is the output of the following script?
+                    class ClassOne {
+                        protected $a = 10;
+                        public function changeValue($b) {
+                           $this->a = $b;
+                        }
+                    }
+                    class ClassTwo extends ClassOne {
+                        protected $b = 10;
+                        public function changeValue($b) {
+                            $this->b = 10;
+                            parent::changeValue($this->a + $this->b);
+                        }
+                        public function displayValues() {
+                            print "a: {$this->a}, b: {$this->b}\n";
+                        }
+                    }
+                    $obj = new ClassTwo();
+                    $obj->changeValue(20);
+                    $obj->changeValue(10);
+                    $obj->displayValues();
+        answers:
+            - {value: 'a: 30, b: 30', correct: false}
+            - {value: 'a: 30, b: 20', correct: false}
+            - {value: 'a: 30, b: 10', correct: true}
+            - {value: 'a: 20, b: 20', correct: false}
+            - {value: 'a: 10, b: 10', correct: false}
+    -
+        question: 'The ______ keyword is used to indicate an incomplete class or method, which must be further extended and/or implemented in order to be used.'
+        answers:
+            - {value: 'final', correct: false}
+            - {value: 'protected', correct: false}
+            - {value: 'incomplete', correct: false}
+            - {value: 'abstract', correct: true}
+            - {value: 'implements', correct: false}
+    -
+        question: 'To ensure that a given object has a particular set of methods, you must provide a method list in the form of an ________ and then attach it as part of your class using the ________ keyword.'
+        answers:
+            - {value: 'array, interface', correct: false}
+            - {value: 'interface, implements', correct: true}
+            - {value: 'interface, extends', correct: false}
+            - {value: 'instance, implements', correct: false}
+            - {value: 'access-list, instance', correct: false}
+    -
+        question: 'Type-hinting and the instanceof keyword can be used to check what types of things about variables?'
+        answers:
+            - {value: 'If a particular child class extends from it', correct: false}
+            - {value: 'If they are an instance of a particular interface', correct: true}
+            - {value: 'If they are an abstract class', correct: false}
+            - {value: 'If they have a particular parent class', correct: true}
+            - {value: 'If they are an instance of a particular class', correct: true}
+    -
+        question: 'What three special methods can be used to perform special logic in the event a particular accessed method or member variable is not found?'
+        answers:
+            - {value: '__get($variable)', correct: true}
+            - {value: '__call($method, $params)', correct: true}
+            - {value: '__destruct()', correct: false}
+            - {value: '__set($variable, $value)', correct: true}
+            - {value: '__call($method)', correct: false}
+    -
+        question: 'The _______ method will be called automatically when an object is represented as a string.'
+        answers:
+            - {value: 'getString()', correct: false}
+            - {value: '__get()', correct: false}
+            - {value: '__value()', correct: false}
+            - {value: '__toString()', correct: true}
+            - {value: '__getString()', correct: false}
+    -
+        question: 'When an object is serialized, which method will be called, automatically, providing your object with an opportunity to close any resources or otherwise prepare to be serialized?'
+        answers:
+            - {value: '__destroy()', correct: false}
+            - {value: '__serialize()', correct: false}
+            - {value: '__destruct()', correct: false}
+            - {value: '__shutdown()', correct: false}
+            - {value: '__sleep()', correct: true}

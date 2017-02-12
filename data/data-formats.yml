@@ -1,0 +1,32 @@
+category: Data Formats
+questions:
+    -
+        question: 'Given a PHP value, which sample shows how to convert the value to JSON?'
+        answers:
+            - { value: '$string = json_encode($value);', correct: true }
+            - { value: '$string = Json::encode($value);', correct: false }
+            - { value: '$json = new Json($value); $string = $json->__toString();', correct: false }
+            - { value: '$value = (object) $value; $string = $value->__toJson();', correct: false }
+    -
+        question: 'Which one of the following XML declarations is NOT valid?'
+        answers:
+            - { value: '<?xml version="1.0" ?>', correct: false }
+            - { value: '<?xml version="1.1" encoding="UTF-8" ?>', correct: false }
+            - { value: '<?xml standalone="no" ?>', correct: false }
+            - { value: '<?xml standalone="1" ?>', correct: true }
+    -
+        question: 'What SimpleXML function is used to parse a file?'
+        answers:
+            - { value: 'simplexml_load_file()', correct: true }
+            - { value: 'simplexml_load_string()', correct: false }
+            - { value: 'load()', correct: false }
+            - { value: 'loadFile()', correct: false }
+            - { value: 'loadXML()', correct: false }
+            - { value: 'None of the above', correct: false }
+    -
+        question: 'Which of the following will NOT instantiate a DateTime object with the current timestamp?'
+        answers:
+            - { value: '$date = new DateTime();', correct: false }
+            - { value: "$date = new DateTime('@' . time());", correct: false }
+            - { value: "$date = new DateTime('now');", correct: false }
+            - { value: 'D. $date = new DateTime(time());', correct: true }

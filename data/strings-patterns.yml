@@ -1,0 +1,153 @@
+category: Strings and Patterns
+questions:
+    -
+        question: 'For an arbitrary string $mystring, which of the following checks will correctly determine if the string PHP exists within it?'
+        answers:
+            - {value: 'if(strpos($mystring, "PHP") !== false)', correct: true}
+            - {value: 'if(!strpos($mystring, "PHP"))', correct: false}
+            - {value: 'if(strpos($mystring, "PHP") === true', correct: false}
+            - {value: 'if(strloc($mystring, "PHP") == true', correct: false}
+            - {value: 'if(strloc($mystring, "PHP") === false)', correct: false}
+    -
+        question: 'Which of the following are not valid ways to embed a variable into a string?'
+        answers:
+            - {value: '$a = "Value: $value->getValue()";', correct: true}
+            - {value: '$a = "Value: {$value}";', correct: false}
+            - {value: '$a = ''Value: $value'';', correct: true}
+            - {value: '$a = "Value: $value";', correct: false}
+            - {value: '$a = "Value: {$value[''val'']}";', correct: false}
+    -
+        question: | 
+                    What variable reference would go in the spots indcated by ????? in the code segment below?
+                    $msg = "The Quick Brown Foxed Jumped Over the Lazy Dog";
+                    $state = true;
+                    $retval = "";
+                    for ($i = 0; (isset(??????)); $i++) {
+                        if($state) {
+                            $retval .= strtolower(?????);
+                        } else {
+                            $retval .= strtoupper(?????);
+                        }
+                        $state = !$state;
+                    }
+                    print $retval;
+        answers:
+            - {value: '$msg{$i}', correct: true}
+            - {value: 'ord($msg);', correct: false}
+            - {value: 'chr($msg);', correct: false}
+            - {value: 'substr($msg, $i, 2);', correct: false}
+    -
+        question: | 
+                    Given the two values below, which of the following possiblities will print 10 foos20 bars?
+                    $var1 = "10 foos";
+                    $var2 = "20 bars";
+                    print ???????;
+        answers:
+            - {value: 'implode("", array($var1,$var2));', correct: true}
+            - {value: '$var1 . $var2', correct: true}
+            - {value: '$var1 + $var2', correct: false}
+            - {value: 'All of the above', correct: false}
+            - {value: 'None of the above', correct: false}
+    -
+        question: 'When comparing two strings, which of the following is acceptable?'
+        answers:
+            - {value: '$a === $b;', correct: true}
+            - {value: 'strcasecmp($a, $b);', correct: true}
+            - {value: 'strcmp($a, $b);', correct: true}
+            - {value: '$a == $b;', correct: true}
+            - {value: 'str_compare($a, $b);', correct: false}
+    -
+        question: 'A fingerprint of a string can be determined using which of the following?'
+        answers:
+            - {value: 'md5()', correct: true}
+            - {value: 'hash()', correct: false}
+            - {value: 'fingerprint()', correct: false}
+            - {value: 'None of the above', correct: false}
+    -
+        question: 'Which of the following is the best way to split a string on the "-=-" pattern?'
+        answers:
+            - {value: 'They all are equally proper methods', correct: false}
+            - {value: 'str_split($string, strpos($string, "-=-"))', correct: false}
+            - {value: 'preg_split("-=-", $string);', correct: false}
+            - {value: 'explode("-=-", $string);', correct: true}
+    -
+        question: | 
+                    What is the output of the following code?
+                    $string = "14302";
+                    $string[$string[2]] = "4";
+                    print $string;
+        answers:
+            - {value: '14304', correct: false}
+            - {value: '14342', correct: true}
+            - {value: '44302', correct: false}
+            - {value: '14402', correct: false}
+            - {value: 'Array', correct: false}
+    -
+        question: 'Which function is best suited for removing markup tags from a string?'
+        answers:
+            - {value: 'strip_markup', correct: false}
+            - {value: 'strip_tags', correct: true}
+            - {value: 'str_replace', correct: false}
+            - {value: 'preg_replace', correct: false}
+            - {value: 'preg_strip', correct: false}
+    -
+        question: 'Identify the best approach to compare to variables in a binary-safe fashion'
+        answers:
+            - {value: 'Both strcmp() and $a === $b', correct: true}
+            - {value: '$a == $b', correct: false}
+            - {value: '$a === $b', correct: false}
+            - {value: 'str_compare()', correct: false}
+            - {value: 'strstr()', correct: false}
+    -
+        question: | 
+                    Consider the following script:
+                    $oranges = 10;
+                    $apples = 5;
+                    $string = "I have %d apples and %d oranges";
+                    ???????
+
+                    What could be placed in place of ?????? to output the string:
+                    "I have 5 apples and 10 oranges"
+        answers:
+            - {value: 'str_format($string, $apples, $oranges);', correct: false}
+            - {value: 'print($string, $apples, $oranges);', correct: false}
+            - {value: 'printf($string, $apples, $oranges);', correct: true}
+            - {value: 'print sprintf($apples, $oranges);', correct: false}
+            - {value: 'sprintf($string, $oranges, $apples);', correct: false}
+        question: | 
+                    Which functions would be needed to translate the following string:
+                    I love PHP 5
+                    to the following?
+                    5 PHP EVOL I
+        answers:
+            - {value: 'mirror()', correct: false}
+            - {value: 'strtoupper()', correct: true}
+            - {value: 'toupper()', correct: false}
+            - {value: 'str_reverse()', correct: false}
+            - {value: 'strrev()', correct: true}
+    -
+        question: | 
+                    Which string does the following PCRE regular expression match?
+                    $regex = "/^([a-z]{5})[1-5]+([a-z]+)/";
+        answers:
+            - {value: Hello34262343goodbye', correct: false}
+            - {value: 'frank12345abc', correct: true}
+            - {value: 'hello34212343goodbye', correct: true}
+            - {value: 'abcdefghi12345abc', correct: false}
+            - {value: 'None of the above', correct: false}
+    -
+        question: 'Which PCRE regular expression will match the string PhP5-rocks'
+        answers:
+            - {value: '/^[hp1-5]*\-.*/i', correct: true}
+            - {value: '/[hp1-5]*\-.?/', correct: false}
+            - {value: '/[hp][1-5]*\-.*/', correct: false}
+            - {value: '/[PhP]{3}[1-5]{2,3}\-.*$/', correct: false}
+            - {value: '/[a-z1-5\-]*/', correct: false}
+    -
+        question: 'If regular expressions must be used, in general which type of regular expression functions available to PHP is preferred for performance reasons?'
+        answers:
+            - {value: 'strtok() using regular expressions', correct: false}
+            - {value: 'preg_* regular expression functions', correct: true}
+            - {value: 'parse_str() using regular expressions', correct: false}
+            - {value: 'strregex* regular expression functions', correct: false}
+            - {value: 'ereg* regular expression functions', correct: false}
