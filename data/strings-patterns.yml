@@ -38,7 +38,7 @@ questions:
             - {value: 'substr($msg, $i, 2);', correct: false}
     -
         question: | 
-                    Given the two values below, which of the following possiblities will print 10 foos20 bars?
+                    Given the two values below, which of the following possibilities will print 10 foos20 bars?
                     $var1 = "10 foos";
                     $var2 = "20 bars";
                     print ???????;
@@ -91,7 +91,7 @@ questions:
             - {value: 'preg_replace', correct: false}
             - {value: 'preg_strip', correct: false}
     -
-        question: 'Identify the best approach to compare to variables in a binary-safe fashion'
+        question: 'Identify the best approach to compare two variables in a binary-safe fashion'
         answers:
             - {value: 'Both strcmp() and $a === $b', correct: true}
             - {value: '$a == $b', correct: false}
