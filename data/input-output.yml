@@ -13,4 +13,4 @@ questions:
             - {value: '$stderr = STDERR;', correct: true}
             - {value: '$stderr = fopen("php://stderr", "w");', correct: true}
             - {value: '$stderr = stderr("w")', correct: false}
-            - {value: '$stderr = fwrite("php://stderr");', correct: true)}
+            - {value: '$stderr = fwrite("php://stderr");', correct: true}
