@@ -150,7 +150,7 @@ questions:
             - {value: 'forward', correct: false}
             - {value: 'prev', correct: true}
             - {value: 'current', correct: true}
-            - {value: 'next', correct: next}
+            - {value: 'next', correct: true}
     -
         question: |
                     Given the following array:
