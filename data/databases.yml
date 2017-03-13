@@ -26,10 +26,10 @@ questions:
                     $stmt->bindColumn(3, $result);
                     $row = $stmt->fetch(PDO::FETCH_BOUND);
         answers:
-            - { value: 'The database will return no rows.', corrent: false }
-            - { value: 'The value of $row will be an array.', corrent: false }
-            - { value: 'The value of $result will be empty.', corrent: false }
-            - { value: "The value of $result will be 'gamma@example.net'.", corrent: true }
+            - { value: 'The database will return no rows.', correct: false }
+            - { value: 'The value of $row will be an array.', correct: false }
+            - { value: 'The value of $result will be empty.', correct: false }
+            - { value: "The value of $result will be 'gamma@example.net'.", correct: true }
     -
         question: 'Transactions are used to...'
         answers:
