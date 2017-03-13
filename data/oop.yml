@@ -54,7 +54,7 @@ questions:
             - {value: 'Static methods can only be called using the :: syntax and never from an instance', correct: false}
             - {value: 'Static methods do not provide a reference to $this', correct: true}
             - {value: 'Static methods cannot be called from within class instances', correct: false}
-            - {value: 'Static methods don''t have access to the self keyword', correct: true}
+            - {value: 'Static methods don''t have access to the self keyword', correct: false}
             - {value: 'There is no functional difference between a static and non-static method', correct: false}
 
     -
