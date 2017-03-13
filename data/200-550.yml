@@ -1,0 +1,2058 @@
+category: 200-550
+questions:
+  -
+    question: Which of the following are valid identifiers? (Choose 3)
+    answers:
+      - { value: 'function 4You() { }', correct: false }
+      - { value: 'function _4You() { }', correct: true }
+      - { value: 'function object() { }', correct: true }
+      - { value: '$1 = "Hello";', correct: false }
+      - { value: '$_1 = "Hello World";', correct: true }
+  -
+    question: What super-global should be used to access information about uploaded files via a POST request?
+    answers:
+      - { value: '$_SERVER', correct: false }
+      - { value: '$_ENV', correct: false }
+      - { value: '$_POST', correct: false }
+      - { value: '$_FILES', correct: true }
+      - { value: '$_GET', correct: false }
+  -
+    question: What is the difference between "print" and "echo"?
+    answers:
+      - { value: 'There is no difference.', correct: false }
+      - { value: 'Print has a return value, echo does not', correct: true }
+      - { value: 'Echo has a return value, print does not', correct: false }
+      - { value: 'Print buffers the output, while echo does not', correct: false }
+      - { value: 'None of the above', correct: false }
+  -
+    question: |
+                What is the output of the following code?
+                echo "1" + 2 * "0x02";
+    answers:
+      - { value: '1', correct: false }
+      - { value: '3', correct: false }
+      - { value: '5', correct: true }
+      - { value: '20', correct: false }
+      - { value: '7', correct: false }
+  -
+    question: |
+                What is the result of the following bitwise operation in PHP?
+                1 ^ 2
+    answers:
+      - { value: '1', correct: false }
+      - { value: '3', correct: true }
+      - { value: '2', correct: false }
+      - { value: '4', correct: false }
+      - { value: '-1', correct: false }
+  -
+    question: |
+                What is the output of the following code?
+                echo "22" + "0.2", 23 . 1;
+    answers:
+      - { value: '220.2231', correct: false }
+      - { value: '22.2231', correct: true }
+      - { value: '22.2,231', correct: false }
+      - { value: '56.2', correct: false }
+  -
+    question: |
+                What is the output of the following code?
+                $first = "second";
+                $second = "first";
+                echo $$$first;
+    answers:
+      - { value: '"first"', correct: false }
+      - { value: '"second"', correct: true }
+      - { value: 'an empty string', correct: false }
+      - { value: 'an error', correct: false }
+  -
+    question: Which of the following code snippets DO NOT write the exact content of the file "source.txt" to "target.txt"? (Choose 2)
+    answers:
+      - { value: 'file_put_contents("target.txt", fopen("source.txt", "r"));', correct: false }
+      - { value: 'file_put_contents("target.txt", readfile("source.txt"));', correct: true }
+      - { value: 'file_put_contents("target.txt", join(file("source.txt"), "\n"));', correct: true }
+      - { value: 'file_put_contents("target.txt", file_get_contents("source.txt"));', correct: false }
+      - { value: '$handle = fopen("target.txt", "w+"); fwrite($handle, file_get_contents("source.txt")); fclose($handle);', correct: false }
+  -
+    question: What is the recommended method of copying data between two opened files?
+    answers:
+      - { value: 'copy($source_file, $destination_file);', correct: false }
+      - { value: 'copy($destination_file, $source_file);', correct: false }
+      - { value: 'stream_copy_to_stream($source_file, $destination_file);', correct: true }
+      - { value: 'stream_copy_to_stream($destination_file, $source_file);', correct: false }
+      - { value: 'stream_bucket_prepend($source_file, $destination_file);', correct: false }
+  -
+    question: Which of the following will set a 10 seconds read timeout for a stream?
+    answers:
+      - { value: 'ini_set("default_socket_timeout", 10);', correct: false }
+      - { value: 'stream_read_timeout($stream, 10);', correct: false }
+      - { value: 'Specify the timeout as the 5th parameter to the fsockopen() function used to open a stream', correct: false }
+      - { value: 'stream_set_timeout($stream, 10);', correct: true }
+      - { value: 'None of the above', correct: false }
+  -
+    question: What function allows resizing of PHP's file write buffer?
+    answers:
+      - { value: 'ob_start()', correct: false }
+      - { value: 'set_write_buffer()', correct: false }
+      - { value: 'stream_set_write_buffer()', correct: true }
+      - { value: 'Change the output_buffering INI setting via ini_set() function', correct: false }
+  -
+    question: What does the __FILE__ constant contain?
+    answers:
+      - { value: 'The filename of the current script.', correct: false }
+      - { value: 'The full path to the current script.', correct: true }
+      - { value: 'The URL of the request made.', correct: false }
+      - { value: 'The path to the main script.', correct: false }
+  -
+    question: What can prevent PHP from being able to open a file on the hard drive (Choose 2)?
+    answers:
+      - { value: 'File system permissions', correct: true }
+      - { value: 'File is outside of open_basedir', correct: true }
+      - { value: 'File is inside the /tmp directory.', correct: false }
+      - { value: 'PHP is running in CGI mode.', correct: false }
+  -
+    question: What purpose do namespaces fulfill?
+    answers:
+      - { value: 'Encapsulation', correct: true }
+      - { value: 'Alternative to classes', correct: false }
+      - { value: 'Improved performance', correct: false }
+      - { value: 'All of the above', correct: false }
+  -
+    question: When would you use classes and when would you use namespaces?
+    answers:
+      - { value: 'Use classes to encapsulate code and represent objects, and namespaces to avoid symbol name collisions', correct: true }
+      - { value: 'Use classes for performance-sensitive code, and namespaces when readability matters more', correct: false }
+      - { value: 'Use namespaces for performance-sensitive code, and classes when readability matters more', correct: false }
+      - { value: 'D. Always use them; namespaces are always superior to classes', correct: false }
+  -
+    question: |
+                In order to create an object storage where each object would be stored only once, you may use which of the
+                following? (Choose 2)
+    answers:
+      - { value: 'SplFixedArray', correct: false }
+      - { value: 'SplObjectStorage', correct: true }
+      - { value: 'SplString', correct: false }
+      - { value: 'spl_object_hash', correct: true }
+      - { value: 'spl_same_object', correct: false }
+  -
+    question: |
+                What is the output of the following code?
+                class Base {
+                  protected static function whoami() {
+                    echo "Base ";
+                  }
+                  public static function whoareyou() {
+                    static::whoami();
+                  }
+                }
+                class A extends Base {
+                  public static function test() {
+                    Base::whoareyou();
+                    self::whoareyou();
+                    parent::whoareyou();
+                    A::whoareyou();
+                    static::whoareyou();
+                  }
+                  public static function whoami() {
+                    echo "A ";
+                  }
+                }
+                class B extends A {
+                  public static function whoami() {
+                    echo "B ";
+                  }
+                }
+                B::test();
+    answers:
+      - { value: 'B B B B B', correct: false }
+      - { value: 'Base A Base A B', correct: false }
+      - { value: 'Base B B A B', correct: true }
+      - { value: 'Base B A A B', correct: false }
+  -
+    question: |
+                Late static binding is used in PHP to:
+    answers:
+      - { value: 'Load dynamic libraries and extensions at runtime', correct: false }
+      - { value: 'Use caller class information provided in static method call', correct: true }
+      - { value: 'Resolve undefined class names by automatically including needed files', correct: false }
+      - { value: 'Find proper method to call according to the call arguments', correct: false }
+  -
+    question: |
+                What is the output of the following code?
+                class Test {
+                  public function __call($name, $args)
+                  {
+                    call_user_func_array(array('static', "test$name"), $args)
+                  }
+                  public function testS($l) {
+                    echo "$l,";
+                  }
+                }
+                class Test2 extends Test {
+                  public function testS($l) {
+                    echo "$l,$l,";
+                  }
+                }
+                $test = new Test2();
+                $test->S('A');
+    answers:
+      - { value: 'A,', correct: false }
+      - { value: 'A,A,', correct: true }
+      - { value: 'A,A,A,', correct: false }
+      - { value: 'PHP Warning: call_user_func_array() expects parameter 1 to be a valid callback', correct: false }
+  -
+    question: Which of the following tasks can be achieved by using magic methods? (Choose 3)
+    answers:
+      - { value: 'Initializing or uninitializing object data', correct: true }
+      - { value: 'Creating a new stream wrapper', correct: false }
+      - { value: 'Creating an iterable object', correct: false }
+      - { value: 'Processing access to undefined methods or properties', correct: true }
+      - { value: 'Overloading operators like +, *, etc.', correct: false }
+      - { value: 'Converting objects to string representation', correct: false}
+  -
+    question: |
+                How should class MyObject be defined for the following code to work properly? Assume $array is an array
+                and MyObject is a user-defined class.
+                $obj = new MyObject();
+                array_walk($array, $obj);
+    answers:
+      - { value: 'MyObject should extend class Closure', correct: false }
+      - { value: 'MyObject should implement interface Callable', correct: false }
+      - { value: 'MyObject should implement method __call', correct: false }
+      - { value: 'MyObject should implement method __invoke', correct: true }
+  -
+    question: |
+                Consider the following code. What change must be made to the class for the code to work as written?
+                class Magic {
+                  protected $v = array("a" => 1, "b" => 2, "c" => 3); public function __get($v) {
+                    return $this->v[$v];
+                  }
+                }
+                $m = new Magic();
+                $m->d[] = 4;
+                echo $m->d[0];
+    answers:
+      - { value: 'Nothing, this code works just fine.', correct: false }
+      - { value: 'Add __set method doing $this->v[$var] = $val', correct: false }
+      - { value: 'Rewrite __get as: public function __get(&$v)', correct: false }
+      - { value: 'Rewrite __get as: public function &__get($v)', correct: true }
+      - { value: 'Make __get method static', correct: false }
+  -
+    question: |
+                SimpleXML provides the ability to iterate over items in an XML document, as well as access items within it
+                as if they were object properties. When creating your own classes to access data, implementing which of
+                the following would NOT achieve this goal?
+    answers:
+      - { value: '__toString', correct: true }
+      - { value: 'Iterator', correct: false }
+      - { value: '__get/__set', correct: false }
+      - { value: 'ArrayAccess', correct: false }
+    Correct Answer: A
+  -
+    question: Which of the following is used to find all PHP files under a certain directory?
+    answers:
+      - { value: 'PHPIterator', correct: false }
+      - { value: 'RecursiveTreeIterator', correct: false }
+      - { value: 'RecursiveDirectoryIterator', correct: true }
+      - { value: 'SplTempFileObject', correct: false }
+  -
+    question: What is the name of the key in $_FILES['name'] that contains the number of bytes of the uploaded file?
+    answers:
+      - { value: 'size', correct: true }
+  -
+    question: What information can be used to reliably determine the type of an uploaded file?
+    answers:
+      - { value: 'MIME type', correct: false }
+      - { value: 'File name extension', correct: false }
+      - { value: 'Contents of the file', correct: true }
+  -
+    question: Which MIME type is always sent by a client if a JPEG file is uploaded via HTTP?
+    answers:
+      - { value: 'image/jpeg', correct: false }
+      - { value: 'image/jpg', correct: false }
+      - { value: 'image/pjpeg', correct: false }
+      - { value: 'Depends on the client system', correct: true }
+  -
+    question: |
+                Your application uses PHP to accept and process file uploads. It fails to upload a file that is 5 MB in size,
+                although upload_max_filesize is set to "10M". Which of the following configurations could be responsible for
+                this outcome? (Choose 2)
+    answers:
+      - { value: 'The PHP configuration option post_max_size is set to a value that is too small', correct: true }
+      - { value: 'The web server is using an incorrect encoding as part of the HTTP response sent to the client', correct: false }
+      - { value: 'The browser uses an incorrect encoding as part of the HTTP request sent to the server', correct: false }
+      - { value: 'The hidden form field MAX_FILE_SIZE was set to a value that is too small', correct: true }
+      - { value: 'PHP cannot process file uploads larger than 4 MB', correct: false }
+  -
+    question: |
+                Consider the following table data and PHP code. What is the outcome?
+                Table data (table name "users" with primary key "id"):
+                id name email
+                ------- ----------- -------------------
+                1 anna alpha@example.com
+                2 betty beta@example.org
+                3 clara gamma@example.net
+                5 sue sigma@example.info
+                PHP code (assume the PDO connection is correctly established):
+                $dsn = 'mysql:host=localhost;dbname=exam';
+                $user = 'username';
+                $pass = '********';
+                $pdo = new PDO($dsn, $user, $pass);
+                $cmd = "SELECT * FROM users WHERE id = :id";
+                $stmt = $pdo->prepare($cmd);
+                $id = 3;
+                $stmt->bindParam('id', $id);
+                $stmt->execute();
+                $stmt->bindColumn(3, $result);
+                $row = $stmt->fetch(PDO::FETCH_BOUND);
+    answers:
+      - { value: 'The database will return no rows.', corrent: false }
+      - { value: 'The value of $row will be an array.', corrent: false }
+      - { value: 'The value of $result will be empty.', corrent: false }
+      - { value: "The value of $result will be 'gamma@example.net'.", corrent: true }
+  -
+    question: |
+                Consider the following table data and PHP code. What is the outcome?
+                Table data (table name "users" with primary key "id"):
+                id name email
+                ------- ----------- -------------------
+                1 anna alpha@example.com
+                2 betty beta@example.org
+                3 clara gamma@example.net
+                5 sue sigma@example.info
+                PHP code (assume the PDO connection is correctly established):
+                $dsn = 'mysql:host=localhost;dbname=exam';
+                $user = 'username';
+                $pass = '********';
+                $pdo = new PDO($dsn, $user, $pass);
+                try {
+                  $cmd = "INSERT INTO users (id, name, email) VALUES (:id, :name, :email)"; $stmt = $pdo->prepare
+                  ($cmd);
+                  $stmt->bindValue('id', 1);
+                  $stmt->bindValue('name', 'anna');
+                  $stmt->bindValue('email', 'alpha@example.com');
+                  $stmt->execute();
+                  echo "Success!";
+                } catch (PDOException $e) {
+                  echo "Failure!";
+                  throw $e;
+                }
+    answers:
+      - { value: 'The INSERT will succeed and the user will see the "Success!" message.', correct: false }
+      - { value: 'The INSERT will fail because of a primary key violation, and the user will see the "Success!" message.', correct: true }
+      - { value: 'The INSERT will fail because of a primary key violation, and the user will see a PDO warning message.', correct: false }
+      - { value: 'The INSERT will fail because of a primary key violation, and the user will see the "Failure!" message.', correct: false }
+  -
+    question: |
+                Consider the following table data and PHP code. What is a possible outcome?
+                Table data (table name "users" with primary key "id"):
+                id name email------- ----------- -------------------
+                1 anna alpha@example.com
+                2 betty beta@example.org
+                3 clara gamma@example.net
+                5 sue sigma@example.info
+                PHP code (assume the PDO connection is correctly established):
+                $dsn = 'mysql:host=localhost;dbname=exam';
+                $user = 'username';
+                $pass = '********';
+                $pdo = new PDO($dsn, $user, $pass);
+                $cmd = "SELECT name, email FROM users LIMIT 1";
+                $stmt = $pdo->prepare($cmd);
+                $stmt->execute();
+                $result = $stmt->fetchAll(PDO::FETCH_BOTH);
+                $row = $result[0];
+    answers:
+      - { value: "The value of $row is `array(0 => 'anna', 1 => 'alpha@example.com')`.", correct: false }
+      - { value: "The value of $row is `array('name' => 'anna', 'email' => 'alpha@example.com')`.", correct: false }
+      - { value: "The value of $row is `array(0 => 'anna', 'name' => 'anna', 1 => 'alpha@example.com', 'email' =>'alpha@example.com')`.", correct: true }
+      - { value: "The value of $result is `array('anna' => 'alpha@example.com')`.", correct: false }
+  -
+    question: |
+                Consider the following table data and PHP code, and assume that the database supports transactions.
+                What is the outcome?
+                Table data (table name "users" with primary key "id"):
+                id name email
+                ------- ----------- -------------------
+                1 anna alpha@example.com
+                2 betty beta@example.org
+                3 clara gamma@example.net
+                5 sue sigma@example.info
+                PHP code (assume the PDO connection is correctly established):
+                $dsn = 'mysql:host=localhost;dbname=exam';
+                $user = 'username';
+                $pass = '********';
+                $pdo = new PDO($dsn, $user, $pass);
+                try {
+                  $pdo->exec("INSERT INTO users (id, name, email) VALUES (6, 'bill', 'delta@example.com')");
+                  $pdo->begin();
+                  $pdo->exec("INSERT INTO users (id, name, email) VALUES (7, 'john', 'epsilon@example.com')");
+                  throw new Exception();
+                }
+                catch (Exception $e) {
+                  $pdo->rollBack();
+                }
+    answers:
+      - { value: "The user 'bill' will be inserted, but the user 'john' will not be.", correct: true }
+      - { value: "Both user 'bill' and user 'john' will be inserted.", correct: false }
+      - { value: "Neither user 'bill' nor user 'john' will be inserted.", correct: false }
+      - { value: "The user 'bill' will not be inserted, but the user 'john' will be.", correct: false }
+  -
+    question: Given a PHP value, which sample shows how to convert the value to JSON?
+    answers:
+      - { value: '$string = json_encode($value);', correct: true }
+      - { value: '$string = Json::encode($value);', correct: false }
+      - { value: '$json = new Json($value); $string = $json->__toString();', correct: false }
+      - { value: '$value = (object) $value; $string = $value->__toJson();', correct: false }
+  -
+    question: |
+                Assuming UTF-8 encoding, what is the value of $count?
+                $count = strlen($data);
+    answers:
+      - { value: '0', correct: false }
+      - { value: '4', correct: false }
+      - { value: '5', correct: true }
+      - { value: '7', correct: false }
+  -
+    question: |
+                What is the output of this code?
+                $world = 'world';
+                echo <<<'TEXT'
+                hello $world
+                TEXT;
+    answers:
+      - { value: 'hello world', correct: false }
+      - { value: 'hello $world', correct: false }
+      - { value: 'PHP Parser error', correct: true }
+  -
+    question: What function can be used to retrieve an array of current options for a stream context?
+    answers:
+      - { value: 'stream_context_get_params', correct: false }
+      - { value: 'stream_context_get_default', correct: false }
+      - { value: 'stream_context_get_options', correct: true }
+      - { value: "The 'options' element of the stream_get_meta_data return value", correct: false }
+  -
+    question: |
+                When retrieving data from URLs, what are valid ways to make sure all file_get_contents calls send a certain
+                user agent string? (Choose 2)
+    answers:
+      - { value: "$default_opts = array('http'=>array('user_agent'=>'My Cool Browser')); $default =  stream_context_set_default($default_opts);", correct: true }
+      - { value: 'stream_context_set_option("user_agent", "My Cool Browser");', correct: false }
+      - { value: 'ini_set("user_agent", "My Cool Browser");', correct: true }
+      - { value: 'stream_context_set_option($context, "http", "user_agent", "My Cool Browser");', correct: false }
+  -
+    question: What will an opcode cache ALWAYS automatically improve?
+    answers:
+      - { value: 'Running time of a loop in a PHP script', correct: false }
+      - { value: 'Efficiency of HTML markup generated by a PHP script', correct: false }
+      - { value: 'Execution speed of a PHP script', correct: false }
+      - { value: 'Memory footprint of a PHP script', correct: false }
+      - { value: 'None of the above', correct: true }
+  -
+    question: What is cached by an opcode cache?
+    answers:
+      - { value: 'Compiled PHP code', correct: true }
+      - { value: 'Native PHP extensions', correct: false }
+      - { value: 'Data sent to the client', correct: false }
+      - { value: 'Data received from the database', correct: false }
+  -
+    question: Which php.ini setting is usually required to use an opcode cache?
+    answers:
+      - { value: 'extension', correct: false }
+      - { value: 'zend_extension', correct: true }
+      - { value: 'optimizer', correct: false }
+      - { value: 'dl', correct: false }
+  -
+    question: |
+                What is the output of the following code?
+                var_dump(boolval(-1));
+    answers:
+      - { value: 'bool(true)', correct: true }
+      - { value: 'bool(false)', correct: false }
+  -
+    question: |
+                What is the output of the following code?
+                var_dump(boolval([]));
+    answers:
+      - { value: 'bool(true)', correct: false }
+      - { value: 'bool(false)', correct: true }
+  -
+    question: |
+                What is the output of the following code?
+                var_dump(boolval(new StdClass()));
+    answers:
+      - { value: 'bool(true)', correct: true }
+      - { value: 'bool(false)', correct: false }
+  -
+    question: Which of the following is NOT true about PHP traits? (Choose 2)
+    answers:
+      - { value: 'Multiple traits can be used by a single class.', correct: false }
+      - { value: 'A trait can implement an interface.', correct: true }
+      - { value: 'A trait can declare a private variable.', correct: false }
+      - { value: 'Traits are able to be auto-loaded.', correct: false }
+      - { value: 'Traits automatically resolve conflicts based on definition order.', correct: true }
+  -
+    question: |
+                Given the following code, what will the output be:
+                trait MyTrait {
+                  private $abc = 1;
+                  public function increment() {
+                    $this->abc++;
+                  }
+                  public function getValue() {
+                    return $this->abc;
+                  }
+                }
+                class MyClass {
+                  use MyTrait;
+                  public function incrementBy2() {
+                    $this->increment();
+                    $this->abc++;
+                  }
+                }
+                $c = new MyClass;
+                $c->incrementBy2();
+                var_dump($c->getValue());
+    answers:
+      - { value: 'Fatal error: Access to private variable MyTrait::$abc from context MyClass', correct: false }
+      - { value: 'Notice: Undefined property MyClass::$abc', correct: false }
+      - { value: 'int(2)', correct: false }
+      - { value: 'int(3)', correct: true }
+      - { value: 'NULL', correct: false }
+  -
+    question: |
+                Given the following code, how can we use both traits A and B in the same class? (select all that apply)
+                trait A {
+                  public function hello() {
+                    return "hello";
+                  }
+                  public function world() {
+                    return "world";
+                  }
+                }
+                trait B {
+                  public function hello() {
+                    return "Hello";
+                  }
+                  public function person($name) {
+                    return ":$name";
+                  }
+                }
+    answers:
+      - { value: 'Rename the A::hello() method to a different name using A::hello as helloA;', correct: false }
+      - { value: "Use B::hello() instead of A 's version using B::hello insteadof A", correct: true }
+      - { value: "Use B::hello() instead of A 's version using use B::hello", correct: false }
+      - { value: 'Rename the A::hello() method to a different name using A::hello renameto helloA;', correct: false }
+      - { value: 'None of the above (both can be used directly)', correct: false }
+  -
+    question: |
+                In the following code, which line should be changed so it outputs the number 2:
+                class A {
+                  protected $x = array(); /* A */
+                  public function getX() { /* B */
+                    return $this->x; /* C */
+                  }
+                }
+                $a = new A(); /* D */
+                array_push($a->getX(), "one");
+                array_push($a->getX(), "two");
+                echo count($a->getX());
+    answers:
+      - { value: 'No changes needed, the code would output 2 as is', correct: false }
+      - { value: 'Line A, to: protected &$x = array();', correct: false }
+      - { value: 'Line B, to: public function &getX() {', correct: true }
+      - { value: 'Line C, to: return &$this->x;', correct: false }
+      - { value: 'Line D, to: $a =& new A();', correct: false }
+  -
+    question: |
+                What is the output of the following code?
+                class A {
+                  public $a = 1;
+                  public function __construct($a) {
+                    $this->a = $a;
+                  }
+                  public function mul() {
+                    return function($x) {
+                      return $this->a*$x;
+                    };
+                  }
+                }
+                $a = new A(2);
+                $a->mul = function($x) {
+                  return $x*$x;
+                };
+                $m = $a->mul();
+                echo $m(3);
+    answers:
+      - { value: '9', correct: false }
+      - { value: '6', correct: true }
+      - { value: '0', correct: false }
+      - { value: '3', correct: false }
+  -
+    question: |
+                What is the output of the following code?
+                class Number {
+                  private $v;
+                  private static $sv = 10;
+                  public function __construct($v) {
+                    $this->v = $v;
+                  }
+                  public function mul() {
+                    return static function ($x) {
+                      return isset($this) ? $this->v*$x : self::$sv*$x;
+                    };
+                  }
+                }
+                $one = new Number(1);
+                $two = new Number(2);
+                $double = $two->mul();
+                $x = Closure::bind($double, null, 'Number');
+                echo $x(5);
+    answers:
+      - { value: '5', correct: false }
+      - { value: '10', correct: false }
+      - { value: '50', correct: true }
+      - { value: 'Fatal error', correct: false }
+  -
+    question: Which of the following statements about anonymous functions in PHP are NOT true? (Choose 2)
+    answers:
+      - { value: 'Anonymous functions can be bound to objects', correct: false }
+      - { value: 'Anonymous functions created within object context are always bound to that object - Assigning closure to a property of an object binds it to that object', correct: true }
+      - { value: 'Methods bind() and bindTo() of the Closure object provide means to create closures with different binding and scope', correct: true }
+      - { value: 'Binding defines the value of $this and the scope for a closure', correct: false }
+  -
+    question: |
+                What will be the result of the following operation?
+                $a = array_merge([1,2,3] + [4=>1,5,6]);
+                echo $a[2];
+    answers:
+      - { value: '4', correct: false }
+      - { value: '3', correct: true }
+      - { value: '2', correct: false }
+      - { value: 'false', correct: false }
+      - { value: 'Parse error', correct: false }
+  -
+    question: Which of the following functions will allow identifying unique values inside an array?
+    answers:
+      - { value: 'array_unique_values', correct: false }
+      - { value: 'array_distinct', correct: false }
+      - { value: 'array_count_values', correct: true }
+      - { value: 'array_intersect', correct: false }
+      - { value: 'array_values', correct: false }
+  -
+    question: |
+                When using password_hash() with the PASSWORD_DEFAULT algorithm constant,
+                which of the following is true? (Choose 2)
+    answers:
+      - { value: 'The algorithm that is used for hashing passwords can change when PHP is upgraded.', correct: true }
+      - { value: 'The salt option should always be set to a longer value to account for future algorithm requirements.', correct: false }
+      - { value: 'The string length of the returned hash can change over time.', correct: true }
+      - { value: "The hash algorithm that's used will always be compatible with crypt().", correct: false }
+  -
+    question: Which of the following are NOT acceptable ways to create a secure password hash in PHP? (Choose 2)
+    answers:
+      - { value: 'md5()', correct: true }
+      - { value: 'hash_pbkdf2()', correct: false }
+      - { value: 'password_hash()', correct: false }
+      - { value: 'crypt()', correct: false }
+      - { value: 'openssl_digest()', correct: true }
+  -
+    question: What is the preferred method for preventing SQL injection?
+    answers:
+      - { value: 'Always using prepared statements for all SQL queries.', correct: true }
+      - { value: 'Always using the available database-specific escaping functionality on all variables prior to building the SQL query.', correct: false }
+      - { value: 'Using addslashes() to escape variables to be used in a query.', correct: false }
+      - { value: 'Using htmlspecialchars() and the available database-specific escaping functionality to escape variables to be used in a query.', correct: false }
+  -
+    question: |
+                Is the following code vulnerable to SQL Injection ($mysqli is an instance of the MySQLi class)?
+                $age = $mysqli->real_escape_string($_GET['age']);
+                $name = $mysqli->real_escape_string($_GET['name']); $query = "SELECT * FROM `table` WHERE name
+                LIKE '$name' AND age = $age"; $results = $mysqli->query($query);
+    answers:
+      - { value: 'No, the code is fully protected from SQL Injection.', correct: false }
+      - { value: 'Yes, because the $name variable is improperly escaped.', correct: false }
+      - { value: 'Yes, because the $name variable and the $age variable is improperly escaped.', correct: false }
+      - { value: 'Yes, because the $age variable is improperly escaped.', correct: true }
+      - { value: 'Yes, because you cannot prevent SQL Injection when using MySQLi', correct: false }
+  -
+    question: Which of the following does NOT help to protect against session hijacking and fixation attacks?
+    answers:
+      - { value: 'Use SSL and set the $secure cookie parameter to true .', correct: false }
+      - { value: 'Set the session.use_only_cookies php.ini parameter to 1 .', correct: false }
+      - { value: 'Set the session.cookie_lifetime php.ini parameter to 0 .', correct: true }
+      - { value: 'Protect against XSS vulnerabilities in the application.', correct: false }
+      - { value: 'Rotate the session id on successful login and logout using session_regenerate_id()', correct: false }
+  -
+    question: Which of the following PHP functions can be used to set the HTTP response code? (Choose 2)
+    answers:
+      - { value: 'header_add()', correct: false }
+      - { value: 'header()', correct: true }
+      - { value: 'http_set_status()', correct: false }
+      - { value: 'http_response_code()', correct: true }
+      - { value: 'http_header_set()', correct: false }
+  -
+    question: What is the name of the header used to require HTTP authentication?
+    answers:
+      - { value: 'Authorization-Required', correct: false }
+      - { value: 'WWW-Authenticate', correct: true }
+      - { value: 'HTTP-Authenticate', correct: false }
+      - { value: 'Authentication-Required', correct: false }
+      - { value: 'HTTP-Auth', correct: false }
+  -
+    question: What types of HTTP authentication are supported by PHP? (Choose 2)
+    answers:
+      - { value: 'Basic', correct: true }
+      - { value: 'Advanced', correct: false }
+      - { value: 'Strict', correct: false }
+      - { value: 'Digest', correct: true }
+      - { value: 'Realm', correct: false }
+  -
+    question: |
+                Which of the following items in the $_SERVER superglobal are important for authenticating the client when
+                using HTTP Basic authentication? (Choose 2)
+    answers:
+      - { value: 'PHP_AUTH_TYPE', correct: false }
+      - { value: 'PHP_AUTH_PASSWORD', correct: false }
+      - { value: 'PHP_AUTH_DIGEST', correct: false }
+      - { value: 'PHP_AUTH_PW', correct: true }
+      - { value: 'PHP_AUTH_USER', correct: false }
+  -
+    question: |
+                When tracking upload progress with sessions, the values of 2 INI settings are needed to determine the key
+                in $_SESSION of the upload progress data. What are the INI settings? (Choose 2)
+    answers:
+      - { value: 'session.upload_progress.file', correct: false }
+      - { value: 'session.upload_progress.key', correct: false }
+      - { value: 'session.upload_progress.prefix', correct: true }
+      - { value: 'session.upload_progress.freq', correct: false }
+      - { value: 'session.upload_progress.name', correct: false }
+  -
+    question: |
+                What is the name of the function that allows you register a set of functions that implement user- defined
+                session handling?
+    answers:
+      - { value: 'session_set_handler()', correct: false }
+      - { value: 'session_set_storage_handler()', correct: false }
+      - { value: 'session_register_handler()', correct: false }
+      - { value: 'session_set_save_handler()', correct: true }
+  -
+    question: Which of these databases is NOT supported by a PDO driver?
+    answers:
+      - { value: 'Microsoft SQL Server', correct: false }
+      - { value: 'SQLite', correct: false }
+      - { value: 'Microsoft Access', correct: false }
+      - { value: 'Berkeley DB', correct: true }
+  -
+    question: Which of these statements about PDO is NOT true?
+    answers:
+      - { value: 'PDO has built-in support for Large Objects (LOBs).', correct: false }
+      - { value: 'Placeholders within PDO prepared statements need to be named.', correct: true }
+      - { value: 'When something goes wrong, PDO can throw an instance of its own exception class.', correct: false }
+      - { value: 'PDO does not emulate missing database features.', correct: false }
+  -
+    question: |
+              What is the output of the following code?
+              class test {
+                public $value = 0;
+                function test() {
+                  $this->value = 1;
+                }
+                function __construct() {
+                  $this->value = 2;
+                }
+              }
+              $object = new test();
+              echo $object->value;
+    answers:
+      - { value: '2', correct: true }
+      - { value: '1', correct: false }
+      - { value: '0', correct: false }
+      - { value: '3', correct: false }
+      - { value: 'No Output, PHP will generate an error message.', correct: false }
+  -
+    question: Which methods can be used to overload object properties? (Choose 2)
+    answers:
+      - { value: 'set(), get()', correct: false }
+      - { value: '__set(), __get  ()- __put(), __receive(), __exists()', correct: true }
+      - { value: 'set(), get(), isset()', correct: false }
+      - { value: '__isset(), __unset()', correct: false }
+  -
+    question: |
+                What is the result of the following code?
+                class T
+                {
+                  const A = 42 + 1;
+                }
+                echo T::A;
+    answers:
+      - { value: '42', correct: false }
+      - { value: '43', correct: false }
+      - { value: 'Parse error', correct: true }
+  -
+    question: Which of the following statements is NOT true?
+    answers:
+      - { value: 'Class constants are public', correct: false }
+      - { value: 'Class constants are being inherited', correct: false }
+      - { value: 'Class constants can omit initialization (default to NULL)', correct: true }
+      - { value: 'Class constants can be initialized by const', correct: false }
+  -
+    question: |
+                What is the result of the following code?
+                define('PI', 3.14);
+                class T
+                {
+                  const PI = PI;
+                }
+                class Math
+                {
+                  const PI = T::PI;
+                }
+                echo Math::PI;
+    answers:
+      - { value: 'Parse errorB. 3.14', correct: false }
+      - { value: 'PI', correct: true }
+      - { value: 'T::PI', correct: false }
+  -
+    question: |
+                Given the following code, what is correct?
+                function f(stdClass &$x = NULL) { $x = 42; }
+                $z = new stdClass;
+                f($z);
+                var_dump($z);
+    answers:
+      - { value: 'Error: Typehints cannot be NULL', correct: false }
+      - { value: 'Error: Typehints cannot be references', correct: false }
+      - { value: 'Result is NULL', correct: false }
+      - { value: 'Result is object of type stdClass', correct: false }
+      - { value: 'Result is 42', correct: true }
+  -
+    question: Which of the following statements is NOT correct?
+    answers:
+      - { value: 'Only methods can have type hints', correct: true }
+      - { value: 'Typehints can be optional', correct: false }
+      - { value: 'Typehints can be references', correct: false }
+  -
+    question: Which of the following statements is correct?
+    answers:
+      - { value: 'Interfaces can extend only one interface', correct: false }
+      - { value: 'Interfaces can extend more than one interface', correct: true }
+      - { value: 'Interfaces can inherit a method from different interfaces', correct: false }
+      - { value: 'Interfaces can redeclare inherited methods', correct: false }
+  -
+    question: Which of the following statements about exceptions is correct? (Choose 2)
+    answers:
+      - { value: 'you can only throw classes derived from Exception', correct: true }
+      - { value: 'a try block can have multiple catch blocks', correct: true }
+      - { value: 'a try block must not be followed by a catch block', correct: false }
+      - { value: 'try blocks cannot contain nested try blocks', correct: false }
+  -
+    question: |
+              What is the output of the following code?
+              try {
+                class MyException extends Exception {};
+                try {
+                  throw new MyException;
+                }
+                catch (Exception $e) {
+                  echo "1:";
+                  throw $e;
+                }
+                catch (MyException $e) {
+                  echo "2:";
+                  throw $e;
+                }
+              }
+              catch (Exception $e) {
+                echo get_class($e);
+              }
+    answers:
+      - { value: 'A parser error, try cannot be followed by multiple catch', correct: false }
+      - { value: '1:', correct: false }
+      - { value: '2:', correct: false }
+      - { value: '1:Exception', correct: false }
+      - { value: '1:MyException', correct: true }
+      - { value: '2:MyException', correct: false}
+      - { value: 'MyException', correct: false }
+  -
+    question: Which of the following is NOT possible using reflection?
+    answers:
+      - { value: 'Analysing of nearly any aspect of classes and interfaces', correct: false }
+      - { value: 'Analysing of nearly any aspect of functions', correct: false }
+      - { value: 'Adding class methods', correct: true }
+      - { value: 'Implement dynamic construction (new with variable class name)', correct: false }
+  -
+    question: What is the name of the method that can be used to provide read access to virtual properties in a class?
+    answers:
+      - { value: '__call()', correct: false }
+      - { value: '__get()', correct: true }
+      - { value: '__set()', correct: false }
+      - { value: '__wakeup()', correct: false }
+      - { value: '__fetch()', correct: false }
+  -
+    question: Which of the following statements about Reflection is correct?
+    answers:
+      - { value: 'Reflection is an extension that can be disabled', correct: false }
+      - { value: 'Reflection is a new extension present only in PHP 5.3+', correct: false }
+      - { value: 'Reflection only allows to reflect on built-in classes', correct: false }
+      - { value: 'Built-in classes can be reflected on command line using php --rc <classname>', correct: true }
+  -
+    question: What is the name of the PHP function used to automatically load non-yet defined classes?
+    answers:
+      - { value: 'autoload()', correct: false }
+      - { value: '__autoload()', correct: true }
+      - { value: '__catch()', correct: false }
+      - { value: 'load()', correct: false }
+      - { value: 'loadClass()', correct: false }
+  -
+    question: |
+                When a class is defined as final it:
+    answers:
+      - { value: 'Can no longer be extended by other classes.', correct: true }
+      - { value: 'Means methods in the class are not over-loadable.', correct: false }
+      - { value: 'Cannot be defined as such, final is only applicable to object methods.', correct: false }
+      - { value: 'Cannot be instantiated.', correct: false }
+  -
+    question: |
+                Type hinting in PHP allows the identification of the
+                following variable types: (Choose 2)
+    answers:
+      - { value: 'String', correct: false }
+      - { value: 'Integer', correct: false }
+      - { value: 'Array', correct: true }
+      - { value: 'Any class or interface type', correct: true }
+      - { value: 'All of the above', correct: false }
+  -
+    question: |
+                In the following code, which classes can be instantiated?
+                abstract class Graphics {
+                  abstract function draw($im, $col);
+                }
+                abstract class Point1 extends Graphics {
+                  public $x, $y;
+                  function __construct($x, $y) {
+                    $this->x = $x;
+                    $this->y = $y;
+                  }
+                  function draw($im, $col) {
+                    ImageSetPixel($im, $this->x, $this->y, $col);
+                  }
+                }
+                class Point2 extends Point1 { }
+                abstract class Point3 extends Point2 { }
+    answers:
+      - { value: 'Graphics', correct: false }
+      - { value: 'Point1', correct: false }
+      - { value: 'Point2', correct: true }
+      - { value: 'Point3', correct: false }
+      - { value: 'None, the code is invalid', correct: false }
+  -
+    question: Which of the following code snippets is correct? (Choose 2)
+    answers:
+      - { value: 'interface Drawable { abstract function draw(); }', correct: false }
+      - { value: 'interface Point { function getX(); function getY(); }', correct: true }
+      - { value: 'interface Line extends Point { function getX2(); function getY2(); }', correct: true }
+      - { value: 'interface Circle implements Point { function getRadius(); }', correct: false }
+  -
+    question: Which of the following statements about PHP is false? (Choose 2)
+    answers:
+      - { value: 'A final class can be derived.', correct: true }
+      - { value: 'A final class may be instantiated.', correct: false }
+      - { value: 'A class with a final function may be derived.', correct: false }
+      - { value: 'Static functions can be final.', correct: false }
+      - { value: 'Properties can be final.', correct: false }
+  -
+    question: Which of the following is correct? (Choose 2)
+    answers:
+      - { value: 'A class can extend more than one class.', correct: false }
+      - { value: 'A class can implement more than one class.', correct: false }
+      - { value: 'A class can extend more than one interface.', correct: false }
+      - { value: 'A class can implement more than one interface.', correct: true }
+      - { value: 'An interface can extend more than one interface.', correct: true }
+      - { value: 'An interface can implement more than one interface.', correct: false}
+  -
+    question: Which of the following functions are used to escape data within the context of HTML? (Choose 2)
+    answers:
+      - { value: 'htmlentities()', correct: true }
+      - { value: 'addslashes()', correct: false }
+      - { value: 'stripslashes()', correct: false }
+      - { value: 'strip_tags()', correct: false }
+      - { value: 'htmlspecialchars()', correct: false }
+  -
+    question: |
+                In a shared hosting environment, session data can be read by PHP scripts written by any user.
+                How can you prevent this? (Choose 2)
+    answers:
+      - { value: 'Store session data in a different location with session.save_path .', correct: true }
+      - { value: 'Store session data in a database.', correct: true }
+      - { value: 'Enable safe_mode .', correct: false }
+      - { value: 'Set session.name to something unique.', correct: false }
+  -
+    question: Which of the following filtering techniques prevents all cross-site scripting (XSS) vulnerabilities?
+    answers:
+      - { value: 'Strip all occurrences of the string <script .', correct: false }
+      - { value: 'Strip all occurrences of the string javascript .', correct: false }
+      - { value: 'Enable magic_quotes_gpc .', correct: false }
+      - { value: 'None of the above.', correct: true }
+  -
+    question: |
+                You work for a shared hosting provider, and your supervisor asks you to disable user scripts to dynamically
+                load PHP extensions using the dl() function. How can you do this? (Choose 2)
+    answers:
+      - { value: "Set enable_dl to Off in the server's php.ini configuration file.", correct: true }
+      - { value: "Add dl to the current value of disable_functions in the server's php.ini configuration file.", correct: true }
+      - { value: "Add dl to the current value of disable_classes in the server's php.ini configuration file.", correct: false }
+      - { value: 'Write a custom function called dl() , save it under the name prepend.inc and then set the auto_prepend_file directive to prepend.inc in php.ini.', correct: false }
+  -
+    question: When a browser requests an image identified by an img tag, it never sends a Cookie header.
+    answers:
+      - { value: 'TRUE', correct: false }
+      - { value: 'FALSE', correct: true }
+  -
+    question: Which of the following techniques ensures that a value submitted in a form can only be yes or no ?
+    answers:
+      - { value: 'Use a select list that only lets the user choose between yes and no .', correct: false }
+      - { value: 'Use a hidden input field that has a value of yes or no .', correct: false }
+      - { value: 'Enable the safe_mode configuration directive.', correct: false }
+      - { value: 'None of the above.', correct: true }
+  -
+    question: Which function can NOT help prevent cross-site scripting? (Choose 2)
+    answers:
+      - { value: 'addslashes()', correct: true }
+      - { value: 'htmlentities()', correct: false }
+      - { value: 'htmlspecialchars()', correct: false }
+      - { value: 'strip_tags()', correct: false }
+      - { value: 'quotemeta()', correct: true }
+  -
+    question: Which constant must be passed as the second argument to htmlentities() to convert single quotes (') to HTML entities?
+    answers:
+      - { value: 'TRUE', correct: false }
+      - { value: 'FALSE', correct: false }
+      - { value: 'ENT_QUOTES', correct: true }
+      - { value: 'ENT_NOQUOTES', correct: false }
+      - { value: 'ENT_COMPAT', correct: false }
+  -
+    question: |
+                One common security risk is exposing error messages directly in the browser. Which PHP configuration
+                directive can be disabled to prevent this?
+    answers:
+      - { value: 'html_display', correct: false }
+      - { value: 'error_reporting', correct: false }
+      - { value: 'display_errors', correct: true }
+      - { value: 'error_log', correct: false }
+      - { value: 'ignore_repeated_errors', correct: false }
+  -
+    question: Which of the following superglobals does not necessarily contain data from the client?
+    answers:
+      - { value: '$_POST', correct: false }
+      - { value: '$_SESSION', correct: true }
+      - { value: '$_GET', correct: false }
+      - { value: '$_SERVER', correct: false }
+  -
+    question: Which of the following statements is true?
+    answers:
+      - { value: 'All PHP database extensions support prepared statements', correct: false }
+      - { value: 'All PHP database extensions come with their own special helper functions to escape user data to be used in dynamic SQL queries', correct: false }
+      - { value: 'All PHP database extensions provide an OOP interface', correct: false }
+      - { value: 'All PHP database extensions appear in the output of php -m , if installed and enabled', correct: true }
+  -
+    question: Transactions are used to...
+    answers:
+      - { value: 'guarantee high performance', correct: false }
+      - { value: 'secure data consistency', correct: true }
+      - { value: 'secure access to the database', correct: false }
+      - { value: 'reduce the database server overhead', correct: false }
+      - { value: 'reduce code size in PHP', correct: false }
+  -
+    question: |
+                When a query that is supposed to affect rows is executed as part of a transaction, and reports no affected
+                rows, it could mean that: (Choose 2)
+    answers:
+      - { value: 'The transaction failed', correct: true }
+      - { value: 'The transaction affected no lines', correct: true }
+      - { value: 'The transaction was rolled back', correct: false }
+      - { value: 'The transaction was committed without error', correct: false }
+  -
+    question: |
+                Transactions should be used to: (Choose 2)
+    answers:
+      - { value: 'Prevent errors in case of a power outage or a failure in the SQL connection', correct: true }
+      - { value: 'Ensure that the data is properly formatted', correct: false }
+      - { value: 'Ensure that either all statements are performed properly, or that none of them are.', correct: true }
+      - { value: 'Recover from user errors', correct: false }
+  -
+    question: |
+                An unbuffered database query will: (Choose 2)
+    answers:
+      - { value: 'Return the first data faster', correct: true }
+      - { value: 'Return all data faster', correct: false }
+      - { value: 'Free connection faster for others scripts to use', correct: false }
+      - { value: 'Use less memory', correct: true }
+  -
+    question: Which technique should be used to speed up joins without changing their results?
+    answers:
+      - { value: 'Add indices on joined columns', correct: true }
+      - { value: 'Add a WHERE clause', correct: false }
+      - { value: 'Add a LIMIT clause', correct: false }
+      - { value: 'Use an inner join', correct: false }
+  -
+    question: |
+                Consider the following XML code:
+                <?xml version="1.0" encoding="utf-8"?>
+                  <books>
+                    <book id="1">PHP 5.5 in 42 Hours</book>
+                    <book id="2">Learning PHP 5.5 The Hard Way</book>
+                  </books>
+                Which of the following SimpleXML calls prints the name of the second book?
+                (Let $xml = simplexml_load_file("books.xml"); .)
+                (Choose 2)
+    answers:
+      - { value: 'echo $xml->books->book[2];', correct: false }
+      - { value: 'echo $xml->books->book[1];', correct: false }
+      - { value: 'echo $xml->book[1];', correct: true }
+      - { value: 'echo $xml->xpath("/books/book[@id=2]");', correct: false }
+      - { value: '$c = $xml->children(); echo $c[1];', correct: false }
+  -
+    question: What method can be used to find the tag <any> via the DOM extension?
+    answers:
+      - { value: 'getElementById()', correct: false }
+      - { value: 'getElementsByTagName()', correct: true }
+      - { value: 'getElementsByTagNameNS()', correct: false }
+      - { value: 'getElementByName()', correct: false }
+      - { value: 'findTag()', correct: false }
+  -
+    question: What DOMElement method should be used to check for availability of a non-namespaced attribute?
+    answers:
+      - { value: 'getAttributeNS()', correct: false }
+      - { value: 'getAttribute()', correct: false }
+      - { value: 'hasAttribute()', correct: true }
+      - { value: 'hasAttributeNS()', correct: true }
+  -
+    question: Which of the following is an invalid DOM save method?
+    answers:
+      - { value: 'save()', correct: false }
+      - { value: 'saveFile()', correct: true }
+      - { value: 'saveXML()', correct: false }
+      - { value: 'saveHTML()', correct: false }
+      - { value: 'saveHTMLFile()', correct: false }
+  -
+    question: Which of the following rules must every correct XML document adhere to? (Choose 2)
+    answers:
+      - { value: 'It has to be well-formed.', correct: true }
+      - { value: 'It has to be valid.', correct: true }
+      - { value: 'It has to be associated to a DTD.', correct: false }
+      - { value: 'It may only contain UTF-8 encoded characters.', correct: false }
+  -
+    question: Which one of the following XML declarations is NOT valid?
+    answers:
+      - { value: '<?xml version="1.0" ?>', correct: false }
+      - { value: '<?xml version="1.1" encoding="UTF-8" ?>', correct: false }
+      - { value: '<?xml standalone="no" ?>', correct: false }
+      - { value: '<?xml standalone="1" ?>', correct: true }
+  -
+    question: Which of the following parts must a XML document have in order to be well-formed?
+    answers:
+      - { value: 'An XML declaration', correct: false }
+      - { value: 'A root element', correct: true }
+      - { value: 'A specified encoding', correct: false }
+      - { value: 'A reference to either a DTD or an XML schema definition', correct: false }
+  -
+    question: |
+                Which of the following can be registered as
+                entry points with a SoapServer instance (choose 2):
+    answers:
+      - { value: 'A single function', correct: true }
+      - { value: 'A single method from a class', correct: false }
+      - { value: 'All methods from a class', correct: true }
+      - { value: 'All classes defined in a script', correct: false }
+  -
+    question: Which of the following statements about SOAP is NOT true?
+    answers:
+      - { value: 'SOAP is also a request-/response-based protocol.', correct: false }
+      - { value: 'SOAP can be transported using SMTP, HTTP and other protocols.', correct: false }
+      - { value: 'SOAP requires developers to use WSDL.', correct: true }
+      - { value: 'SOAP traffic via HTTP can be encrypted and compressed just like other HTTP requests.', correct: false }
+  -
+    question: What SimpleXML function is used to parse a file?
+    answers:
+      - { value: 'simplexml_load_file()', correct: true }
+      - { value: 'simplexml_load_string()', correct: false }
+      - { value: 'load()', correct: false }
+      - { value: 'loadFile()', correct: false }
+      - { value: 'loadXML()', correct: false }
+      - { value: 'None of the above.', correct: false}
+  -
+    question: |
+              The XML document below has been parsed into $xml via SimpleXML. How can the value of <foo> tag accessed?
+              <?xml version='1.0'?>
+                <document>
+                  <bar>
+                    <foo>Value</foo>
+                  </bar>
+                </document>
+    answers:
+      - { value: "$xml->bar['foo']", correct: false }
+      - { value: '$xml->bar->foo', correct: true }
+      - { value: "$xml['document']['bar']['foo']", correct: false }
+      - { value: '$xml->document->bar->foo', correct: false }
+      - { value: "$xml->getElementByName('foo');", correct: false }
+  -
+    question: What parsing methodology is utilized by the SimpleXML extension?
+    answers:
+      - { value: 'SAX', correct: false }
+      - { value: 'DOM', correct: true }
+      - { value: 'XPath', correct: false }
+      - { value: 'Push/Pull Approach', correct: false }
+      - { value: 'Expat', correct: false }
+  -
+    question: |
+      How can the id attribute of the 2nd baz element from the XML string below
+      be retrieved from the SimpleXML object found inside $xml?
+      <?xml version='1.0'?>
+        <foo>
+          <bar>
+            <baz id="1">One</baz>
+            <baz id="2">Two</baz>
+          </bar>
+        </foo>
+    answers:
+      - { value: "$xml->getElementById('2');", correct: false }
+      - { value: "$xml->foo->bar->baz[2]['id']", correct: false }
+      - { value: "$xml->foo->baz[2]['id']", correct: false }
+      - { value: "$xml->foo->bar->baz[1]['id']", correct: false }
+      - { value: "$xml->bar->baz[1]['id']", correct: true }
+  -
+    question: How can a SimpleXML object be converted to a DOM object?
+    answers:
+      - { value: 'dom_import_simplexml()', correct: true }
+      - { value: 'dom_export_simplexml()', correct: false }
+      - { value: 'simplexml_import_dom()', correct: false }
+      - { value: 'SimpleXML2Dom()', correct: false }
+      - { value: 'None of the above.', correct: false }
+  -
+    question: What is the method used to execute XPath queries in the SimpleXML extension?
+    answers:
+      - { value: 'xpathQuery()', correct: false }
+      - { value: 'xpath()', correct: true }
+      - { value: 'simpleXMLXpath()', correct: false }
+      - { value: 'query()', correct: false }
+      - { value: 'evaluate()', correct: false }
+  -
+    question: Which of the following statements are FALSE?
+    answers:
+      - { value: 'SimpleXML allows removal of attributes.', correct: false }
+      - { value: 'SimpleXML allows addition of new attributes.', correct: false }
+      - { value: 'SimpleXML allows removal of nodes.', correct: false }
+      - { value: 'SimpleXML allows addition of new nodes.', correct: false }
+      - { value: 'None of the above', correct: true }
+  -
+    question: What DOM method is used to load HTML files?
+    answers:
+      - { value: 'load()', correct: false }
+      - { value: 'loadXML()', correct: false }
+      - { value: 'loadHTML()', correct: false }
+      - { value: 'loadHTMLFile()', correct: true }
+  -
+    question: |
+                What is the output of the following code?
+                for ($i = 0; $i < 1.02; $i += 0.17) {
+                  $a[$i] = $i;
+                }
+                echo count($a);
+    answers:
+      - { value: '0', correct: false }
+      - { value: '1', correct: true }
+      - { value: '2', correct: false }
+      - { value: '6', correct: false }
+      - { value: '7', correct: false }
+  -
+    question: |
+                After performing the following operations:
+                $a = array('a', 'b', 'c');
+                $a = array_keys(array_flip($a));
+                What will be the value of $a?
+    answers:
+      - { value: "array('c', 'b', 'a')", correct: false }
+      - { value: 'array(2, 1, 0)', correct: false }
+      - { value: "array('a', 'b', 'c')", correct: true }
+      - { value: 'None of the above', correct: false }
+  -
+    question: PHP's array functions such as array_values() can be used on an object if the object...
+    answers:
+      - { value: 'implements Traversable', correct: false }
+      - { value: 'is an instance of ArrayObject', correct: false }
+      - { value: 'implements ArrayAccess', correct: false }
+      - { value: 'None of the above', correct: true }
+  -
+    question: |
+                Which is the most efficient way to determine if a key is present in an array, assuming the array has no
+                NULL values?
+    answers:
+      - { value: "in_array('key', array_keys($a))", correct: false }
+      - { value: "isset($a['key'])", correct: true }
+      - { value: "array_key_exists('key', $a)", correct: false }
+      - { value: 'None of the above', correct: false }
+  -
+    question: An object can be counted with count() and sizeof() if it...
+    answers:
+      - { value: 'implements ArrayAccess', correct: false }
+      - { value: 'has a public __count() method', correct: false }
+      - { value: 'was cast to an object from an array', correct: false }
+      - { value: 'None of the above', correct: true }
+  -
+    question: |
+                What will be the result of the following operation?
+                array_combine(array("A","B","C"), array(1,2,3));
+    answers:
+      - { value: 'array("A","B","C",1,2,3)', correct: false }
+      - { value: 'array(1,2,3,"A","B",C")', correct: false }
+      - { value: 'array("A"=>1,"B"=>2,"C"=>3)', correct: true }
+      - { value: 'array(1=>"A",2=>"B",3=>"C")', correct: false }
+      - { value: 'array(1,2,3)', correct: false }
+  -
+    question: |
+                Which of the following expressions will evaluate to a random value from an array below?
+                $array = array("Sue","Mary","John","Anna");
+    answers:
+      - { value: 'array_rand($array);', correct: false }
+      - { value: 'array_rand($array, 1);', correct: false }
+      - { value: 'shuffle($array);', correct: false }
+      - { value: '$array[array_rand($array)];', correct: true }
+      - { value: 'array_values($array, ARRAY_RANDOM);', correct: false }
+  -
+    question: What function can reverse the order of values in an array so that keys are preserved?
+    answers:
+      - { value: 'array_flip()', correct: false }
+      - { value: 'array_reverse()', correct: true }
+      - { value: 'rsort()', correct: false }
+      - { value: 'krsort()', correct: false }
+      - { value: 'array_multisort()', correct: false }
+  -
+    question: |
+                What will be the output value of the following code?
+                $array = array(1,2,3);
+                while (list(,$v) = each($array));
+                var_dump(current($array));
+    answers:
+      - { value: 'bool(false)', correct: true }
+      - { value: 'int(3)', correct: false }
+      - { value: 'int(1)', correct: false }
+      - { value: 'NULL', correct: false }
+      - { value: 'Array', correct: false }
+  -
+    question: |
+                What will be the output of the following code?
+                $a = array(0, 1, 2 => array(3, 4));
+                $a[3] = array(4, 5);
+                echo count($a, 1);
+    answers:
+      - { value: '4', correct: false }
+      - { value: '5', correct: false }
+      - { value: '8', correct: true }
+      - { value: 'None of the above', correct: false }
+  -
+    question: |
+                Given the following array:
+                $a = array(28, 15, 77, 43);
+                Which function will remove the value 28 from $a?
+    answers:
+      - { value: 'array_shift()', correct: true }
+      - { value: 'array_pop()', correct: false }
+      - { value: 'array_pull()', correct: false }
+      - { value: 'array_unshift()', correct: false }
+  -
+    question: The constructs for(), foreach(), and each() can all be used to iterate an object if the object...
+    answers:
+      - { value: 'implements ArrayAccess', correct: false }
+      - { value: 'implements Iterator', correct: false }
+      - { value: 'implements Iterator and ArrayAccess', correct: true }
+      - { value: 'None of the above', correct: false }
+  -
+    question: |
+              Which parts of the text are matched in the following regular expression?
+              $text = <<<EOT
+              The big bang bonged under the bung.
+              EOT;
+              preg_match_all('@b.n?g@', $text, $matches);
+    answers:
+      - { value: 'bang bong bung', correct: false }
+      - { value: 'bang bonged bung', correct: false }
+      - { value: 'big bang bong bung', correct: true }
+      - { value: 'big bang bung', correct: false }
+  -
+    question: |
+                What will the following code piece print?
+                echo strtr('Apples and bananas', 'ae', 'ea')
+    answers:
+      - { value: 'Applas end benenes', correct: true }
+      - { value: 'Epplas end benenes', correct: false }
+      - { value: 'Apples and bananas', correct: false }
+      - { value: 'Applas end bananas', correct: false }
+  -
+    question: You want to parse a URL into its single parts. Which function do you choose?
+    answers:
+      - { value: 'parse_url()', correct: true }
+      - { value: 'url_parse()', correct: false }
+      - { value: 'get_url_parts()', correct: false }
+      - { value: 'geturlparts()', correct: false }
+  -
+    question: Which elements does the array returned by the function pathinfo() contain?
+    answers:
+      - { value: 'root, dir, file', correct: false }
+      - { value: 'dirname, filename, fileextension', correct: false }
+      - { value: 'dirname, basename, extension', correct: true }
+      - { value: 'path, file', correct: false }
+  -
+    question: |
+                What will the following function call print?
+                printf('%010.6f', 22);
+    answers:
+      - { value: '22', correct: false }
+      - { value: '22.00', correct: false }
+      - { value: '022.000000', correct: true }
+      - { value: '22.000000', correct: false }
+  -
+    question: |
+                What is the output of the following code?
+                echo 0x33, ' monkeys sit on ', 011, ' trees.';
+    answers:
+      - { value: '33 monkeys sit on 11 trees.', correct: false }
+      - { value: '51 monkeys sit on 9 trees.', correct: true }
+      - { value: 'monkeys sit on trees.', correct: false }
+      - { value: '0x33 monkeys sit on 011 trees.', correct: false }
+  -
+    question: |
+                You want to access the 3rd character of a string, contained in the variable $test. Which of the following
+                possibilites work? (Choose 2)
+    answers:
+      - { value: 'echo $test(3);', correct: false }
+      - { value: 'echo $test[2];', correct: true }
+      - { value: 'echo $test(2);', correct: false }
+      - { value: 'echo $test{2};', correct: true }
+      - { value: 'echo $test{3};', correct: false }
+  -
+    question: |
+                Which sentence describes the following regular expression match?
+                preg_match('/^\d+(?:\.[0-9]+)?$/', $test);
+    answers:
+      - { value: 'It matches float numbers with thousand seperators.', correct: false }
+      - { value: 'It matches float numbers without thousand seperators.', correct: true }
+      - { value: 'It matches binary integer numbers.', correct: false }
+      - { value: 'It matches any string.', correct: false }
+      - { value: 'It does not match anything', correct: false }
+  -
+    question: You need to escape special characters to use user input inside a regular expression. Which functionswould you use? (Choose 2)
+    answers:
+      - { value: 'addslashes()', correct: false }
+      - { value: 'htmlentities()', correct: false }
+      - { value: 'preg_quote()', correct: true }
+      - { value: 'regex_quote()', correct: false }
+      - { value: 'quote_meta()', correct: true }
+  -
+    question: |
+                How many elements does the $matches array contain after the following function call is performed?
+                preg_match('/^(\d{1,2}([a-z]+))(?:\s*)\S+ (?=201[0-9])/', '21st March 2014', $matches);
+    answers:
+      - { value: '1', correct: false }
+      - { value: '2', correct: false }
+      - { value: '3', correct: true }
+      - { value: '4', correct: false }
+  -
+    question: |
+                How many elements does the array $matches from the following code contain?
+                $str = "The cat sat on the roof of their house.";
+                $matches = preg_split("/(the)/i", $str, -1, PREG_SPLIT_DELIM_CAPTURE);
+    answers:
+      - { value: '2', correct: false }
+      - { value: '3', correct: false }
+      - { value: '4', correct: false }
+      - { value: '7', correct: true }
+      - { value: '9', correct: false }
+  -
+    question: |
+                Given the default PHP configuration, how can all of the parameters provided via GET be accessed in a
+                form of a string?
+    answers:
+      - { value: "$_GET['ALL']", correct: false }
+      - { value: "$_SERVER['QUERY']", correct: false }
+      - { value: "$_SERVER['QUERY_STRING']", correct: true }
+      - { value: "$_ENV['QUERY']", correct: false }
+      - { value: "$QUERY_STRING", correct: false }
+  -
+    question: |
+                What is the length of a string returned by: md5(rand(), TRUE);
+    answers:
+      - { value: 'Depends on the value returned by rand() function', correct: false }
+      - { value: '32', correct: false }
+      - { value: '24', correct: false }
+      - { value: '16', correct: true }
+      - { value: '64', correct: false }
+  -
+    question: |
+                What is the return value of the following code?
+                strpos("me myself and I", "m", 2)
+    answers:
+      - { value: '2', correct: false }
+      - { value: '3', correct: true }
+      - { value: '4', correct: false }
+      - { value: '0', correct: false }
+      - { value: '1', correct: false }
+  -
+    question: |
+                What is the return value of the following code: substr_compare("foobar", "bar", 3);
+    answers:
+      - { value: '-1', correct: false }
+      - { value: '1', correct: false }
+      - { value: 'TRUE', correct: false }
+      - { value: '0', correct: true }
+      - { value: 'FALSE', correct: false }
+  -
+    question: |
+                You want to allow your users to submit HTML code in a form,
+                which will then be displayed as real code andnot affect your page layout.
+                Which function do you apply to the text, when displaying it? (Choose 2)
+    answers:
+      - { value: 'strip_tags()', correct: false }
+      - { value: 'htmlentities()', correct: true }
+      - { value: 'htmltidy()', correct: false }
+      - { value: 'htmlspecialchars()', correct: true }
+      - { value: 'showhtml()', correct: false }
+  -
+    question: |
+                How many elements does the array $pieces contain after the following piece of code has been executed?
+                $pieces = explode("/", "///");
+    answers:
+      - { value: '0', correct: false }
+      - { value: '3', correct: false }
+      - { value: '4', correct: true }
+      - { value: '5', correct: false }
+  -
+    question: |
+                Which string will be returned by the following function call?
+                $test = '/etc/conf.d/wireless';
+                substr($test, strrpos($test, '/')); // note that strrpos() is being called, and not strpos()
+    answers:
+      - { value: '""', correct: false }
+      - { value: '"/wireless"', correct: true }
+      - { value: '"wireless"', correct: false }
+      - { value: '"/conf.d/wireless"', correct: false }
+      - { value: '"/etc"', correct: false }
+  -
+    question: |
+                An HTML form contains this form element:
+                <input type="file" name="myFile" />
+                When this form is submitted, the following PHP code gets executed:
+                move_uploaded_file(
+                  $_FILES['myFile']['tmp_name'],
+                  'uploads/' . $_FILES['myFile']['name']
+                );
+                Which of the following actions must be taken before this code may go into production? (Choose 2)
+    answers:
+      - { value: "Check with is_uploaded_file() whether the uploaded file $_FILES['myFile']['tmp_name'] is valid", correct: false }
+      - { value: "Sanitize the file name in $_FILES['myFile']['name'] because this value is not consistent among web browsers", correct: true }
+      - { value: 'Check the charset encoding of the HTTP request to see whether it matches the encoding of the uploaded file', correct: false }
+      - { value: "Sanitize the file name in $_FILES['myFile']['name'] because this value could be forged", correct: true }
+      - { value: 'Use $HTTP_POST_FILES instead of $_FILES to maintain upwards compatibility', correct: false }
+  -
+    question: |
+                Which PHP function retrieves a list of HTTP headers that have been sent as part of the HTTP response or
+                are ready to be sent?
+    answers:
+      - { value: 'header()', correct: false }
+      - { value: 'headers()', correct: false }
+      - { value: 'headers_list()', correct: true }
+      - { value: 'headers_sent()', correct: false }
+      - { value: 'getresponseheaders()', correct: false }
+  -
+    question: Which options do you have in PHP to set the expiry date of a session?
+    answers:
+      - { value: 'Set the session.duration directive in php.ini', correct: false }
+      - { value: 'Set session cookie expiry date locally via session_set_cookie_params()', correct: false }
+      - { value: 'Set session expiry date locally via session_cache_expire()', correct: false }
+      - { value: 'None of the above', correct: true }
+  -
+    question: |
+                The following form is loaded in a browser and submitted, with the checkbox activated:
+                <form method="post">
+                  <input type="checkbox" name="accept" />
+                </form>
+                In the server-side PHP code to deal with the form data, what is the value of $_POST['accept'] ?
+    answers:
+      - { value: 'accept', correct: false }
+      - { value: 'ok', correct: false }
+      - { value: 'true', correct: false }
+      - { value: 'on', correct: true }
+  -
+    question: When uploading a file to a PHP script using the HTTP PUT method, where would the file data be found?
+    answers:
+      - { value: 'the $_FILES super-global', correct: false }
+      - { value: 'the input stream php://input', correct: true }
+      - { value: 'the $_POST super-global', correct: false }
+      - { value: 'the global variable scope', correct: false }
+  -
+    question: |
+              The following form is loaded in a recent browser and submitted, with the second select option selected:
+              <form method="post">
+                <select name="list">
+                  <option>one</option>
+                  <option>two</option>
+                  <option>three</option>
+                </select>
+              </form>
+              In the server-side PHP code to deal with the form data, what is the value of $_POST['list'] ?
+    answers:
+      - { value: '1', correct: false }
+      - { value: '2', correct: false }
+      - { value: 'two', correct: true }
+      - { value: 'null', correct: false }
+  -
+    question: Which of the following is NOT a requirement for file uploads to work?
+    answers:
+      - { value: 'The PHP directive file_uploads must be set to On', correct: false }
+      - { value: "The form's method attribute must be set to 'post'", correct: false }
+      - { value: 'The form must include a hidden input element with the name set to "MAX_FILE_SIZE"', correct: true }
+      - { value: "The form's enctype attribute must be set to 'multipart/form-data'", correct: false }
+  -
+    question: |
+                An HTML form contains this form element:
+                <input type="image" name="myImage" src="image.png" /> The user clicks on the image to submit the form.
+                How can you now access the relative coordinates of the mouse click?
+    answers:
+      - { value: "$_FILES['myImage']['x'] and $_FILES['myImage']['y']", correct: false }
+      - { value: "$_POST['myImage']['x'] and $_POST['myImage']['y']", correct: false }
+      - { value: "$_POST['myImage.x'] and $_POST['myImage.y']", correct: false }
+      - { value: "$_POST['myImage_x'] and $_POST['myImage_y']", correct: true }
+  -
+    question: |
+              Your supervisor wants you to disallow PHP scripts to open remote HTTP and FTP resources using PHP's
+              file functions. Which php.ini setting should you change accordingly?
+    answers:
+      - { value: 'allow_url_fopen, allow_url_fopen=off, allow_url_fopen=Off, allow_url_fopen = off, allow_url_fopen = Off', correct: true }
+  -
+    question: |
+                Consider the following code. Which keyword should be used in the line marked with "KEYWORD" instead
+                of "self" to make this code work as intended?
+                abstract class Base {
+                  protected function __construct() {}
+                  public static function create() {
+                    return new self(); // KEYWORD
+                  }
+                  abstract function action();
+                }
+                class Item extends Base {
+                  public function action() { echo __CLASS__; }
+                }
+                $item = Item::create();
+                $item->action(); // outputs "Item"
+    answers:
+      - { value: 'static', correct: true }
+  -
+    question: Which SPL class implements fixed-size storage?
+    answers:
+      - { value: 'SplFixedArray', correct: true }
+  -
+    question: |
+                Which PHP function is used to validate whether the contents of $_FILES['name']['tmp_name'] have really
+                been uploaded via HTTP?
+    answers:
+      - { value: 'is_uploaded_file(), is_uploaded_file', correct: true }
+  -
+    question: |
+                Which PHP function is used to validate whether the contents of $_FILES['name']['tmp_name'] have really
+                been uploaded via HTTP, and also save the contents into another folder?
+    answers:
+      - { value: 'move_uploaded_file(), move_uploaded_file', correct: true }
+  -
+    question: |
+                What is the name of the key for the element in $_FILES['name'] that contains the provisional name of the
+                uploaded file?
+    answers:
+      - { value: 'tmp_name', correct: true }
+  -
+    question: What is the name of the key in $_FILES['name'] that contains the number of bytes of the uploaded file?
+    answers:
+      - { value: 'size', correct: true }
+  -
+    question: |
+                What is the output of the following code?
+                function increment ($val)
+                {
+                  $val = $val + 1;
+                }
+                $val = 1;
+                increment ($val);
+                echo $val;
+    answers:
+      - { value: 1, correct: true }
+  -
+    question: |
+                What is the output of the following code?
+                function increment ($val)
+                {
+                  ++$val;
+                }
+                $val = 1;
+                increment ($val);
+                echo $val;
+    answers:
+      - { value: 1, correct: true }
+  -
+    question: |
+                What is the output of the following code?
+                function increment ($val)
+                {
+                  $_GET['m'] = (int) $_GET['m'] + 1;
+                }
+                $_GET['m'] = 1;
+                echo $_GET['m'];
+    answers:
+      - { value: 1, correct: true }
+  -
+    question: |
+                What is the output of the following code?
+                function increment (&$val)
+                {
+                  return $val + 1;
+                }
+                $a = 1;
+                echo increment ($a);
+                echo increment ($a);
+    answers:
+      - { value: 22, correct: true }
+  -
+    question: |
+                Consider the following code:
+                $result = $value1 ??? $value2;
+                Which operator needs to be used instead of ??? so that $result equals $value1 if $value1 evaluates to true,
+                and equals $value2 otherwise? Just state the operator as it would be required in the code.
+    answers:
+      - { value: '?', correct: true }
+  -
+    question: |
+                What is the output of the following code?
+                class Number {
+                  private $v = 0;
+                  public function __construct($v) { $this->v = $v; }
+                  public function mul() {
+                    return function ($x) { return $this->v * $x; };
+                  }
+                }
+                $one = new Number(1);
+                $two = new Number(2);
+                $double = $two->mul()->bindTo($one);
+                echo $double(5);
+    answers:
+      - { value: 5, correct: true }
+  -
+    question: |
+                Please provide the value of the $code variable in the following statement to set an HTTP status code that
+                signifies that the requested resource was not found.
+                http_response_code($code);
+    answers:
+      - { value: "404, 404 Not Found", correct: true }
+  -
+    question: Which DOMElement property provides a reference to the list of the element's children?
+    answers:
+      - { value: "childNodes", correct: true }
+  -
+    question: |
+                Which value will be assigned to the key 0 in this example?
+                $foo = array(true, '0' => false, false => true);
+    answers:
+      - { value: 'true', correct: true }
+  -
+    question: Please provide the name of the super-global variable where all the information about cookies is available.
+    answers:
+      - { value: '$_COOKIE, $_COOKIE[\], _COOKIE, _COOKIE[\]', correct: true }
+  -
+    question: Which PHP function sets a cookie whose value does not get URL encoded when sending it to the browser?
+    answers:
+      - { value: 'setrawcookie, setrawcookie()', correct: true }
+  -
+    question: Which PHP function sets a cookie and URL encodes its value when sending it to the browser?
+    answers:
+      - { value: 'setcookie, setcookie()', correct: true }
+  -
+    question: Which of these elements can be encapsulated by namespaces and made accessible from the outside?
+    answers:
+      - { value: 'Only classes', correct: false }
+      - { value: 'Classes, functions and constants', correct: true }
+      - { value: 'Classes, functions, constants and variables', correct: false }
+  -
+    question: |
+            You'd like to use the class MyDBConnection that's defined in the
+            MyGreatFramework\MyGreatDatabaseAbstractionLayer namespace,
+            but you want to minimize *as much as possible* the length
+            of the class name you have to type. What would you do?
+    answers:
+      - { value: 'Import the MyGreatFramework namespace', correct: false }
+      - { value: 'Import the MyGreatFramework\MyGreatDatabaseAbstractionLayer namespace', correct: false }
+      - { value: 'Alias MyGreatFramework\MyGreatDatabaseAbstractionLayer\MyDBConnection to a shorter name', correct: true }
+      - { value: 'Alias MyGreatFramework\MyGreatDatabaseAbstractionLayer to a shorter name', correct: false }
+  -
+    question: How should you track errors on your production website?
+    answers:
+      - { value: 'Enabling display_errors', correct: false }
+      - { value: 'Enabling log_errors', correct: true }
+      - { value: 'Having a site-wide exception handler', correct: false }
+      - { value: 'Setting error_reporting to E_ALL & ~E_NOTICE', correct: false }
+  -
+    question: |
+                What would be the output of the following code?
+                namespace MyFramework\DB;
+                class MyClass {
+                  static function myName() {
+                    return __METHOD__;
+                  }
+                }
+                print MyClass::myName();
+    answers:
+      - { value: 'MyFramework\DB\myName', correct: false }
+      - { value: 'MyFramework\DB\MyClass\myName', correct: false }
+      - { value: 'MyFramework\DB\MyClass::myName', correct: true }
+      - { value: 'MyClass::myName', correct: false }
+  -
+    question: |
+                Which of the following methods are available to limit the amount of resources available to PHP through
+                php.ini? (Choose 2)
+    answers:
+      - { value: 'Limit the amount of memory a script can consume', correct: true }
+      - { value: 'Limit the total amount of memory PHP uses on the entire server', correct: false }
+      - { value: 'Limit the maximum execution time of a script', correct: true }
+      - { value: 'Limit the maximum number of concurrent PHP processes', correct: false }
+      - { value: 'Limit the maximum number of concurrent PHP threads', correct: false }
+  -
+    question: |
+                Consider the following two files. When you run test.php, what would the output look like?
+                test.php:
+                include "MyString.php";
+                print ",";
+                print strlen("Hello world!");
+                MyString.php:
+                namespace MyFramework\String;
+                function strlen($str)
+                {
+                  return \strlen($str)*2; // return double the string length
+                }
+                print strlen("Hello world!")
+    answers:
+      - { value: '12,12', correct: false }
+      - { value: '12,24', correct: false }
+      - { value: '24,12', correct: true }
+      - { value: '24,24', correct: false }
+      - { value: 'PHP Fatal error: Cannot redeclare strlen()', correct: false }
+  -
+    question: |
+                Which line of code can be used to replace the INSERT comment in order to output "hello"?
+                class C {
+                  public $ello = 'ello';
+                  public $c;
+                  public $m;
+                  function __construct($y) {
+                      $this->c = static function($f) {
+                        // INSERT LINE OF CODE HERE
+                      };
+                      $this->m = function() {
+                        return "h";
+                      };
+                  }
+                }
+                $x = new C("h");
+                $f = $x->c;
+                echo $f($x->m);
+    answers:
+      - { value: 'return $this->m() . "ello";', correct: false }
+      - { value: 'return $f() . "ello";', correct: true }
+      - { value: 'return "h". $this->ello;', correct: false }
+      - { value: 'return $y . "ello";', correct: false }
+  -
+    question: |
+                What is the output of the following code?
+                function z($x) {
+                  return function ($y) use ($x) {
+                    return str_repeat($y, $x);
+                  };
+                }
+                $a = z(2);
+                $b = z(3);
+                echo $a(3) . $b(2);
+    answers:
+      - { value: '22333', correct: false }
+      - { value: '33222', correct: true }
+      - { value: '33322', correct: false }
+      - { value: '222333', correct: false }
+  -
+    question: |
+                What is the output of the following code?
+                $f = function () { return "hello"; };
+                echo gettype($f);
+    answers:
+      - { value: 'hello', correct: false }
+      - { value: 'string', correct: false }
+      - { value: 'object', correct: true }
+      - { value: 'function', correct: false }
+  -
+    question: |
+                What is the output of the following code?
+                class C {
+                  public $x = 1;
+                  function __construct() { ++$this->x; }
+                  function __invoke() { return ++$this->x; }
+                  function __toString() { return (string) --$this->x; }
+                }
+                $obj = new C();
+                echo $obj();
+    answers:
+      - { value: '0', correct: false }
+      - { value: '1', correct: false }
+      - { value: '2', correct: false }
+      - { value: '3', correct: true }
+  -
+    question: Given a JSON-encoded string, which code sample correctly indicates how to decode the string to native PHP values?
+    answers:
+      - { value: '$json = new Json($jsonValue); $value = $json->decode();', correct: false }
+      - { value: '$value = Json::decode($jsonValue);', correct: false }
+      - { value: '$value = json_decode($jsonValue);', correct: true }
+      - { value: '$value = Json::fromJson($jsonValue);', correct: false }
+  -
+    question: Which of the following PHP values may NOT be encoded to a JavaScript literal using PHP's ext/json capabilities?
+    answers:
+      - { value: 'Hello, world!', correct: false }
+      - { value: 'function(){ alert("Hello, world!"); }', correct: true }
+      - { value: "array('Hello, world!')", correct: false }
+      - { value: "array('message' => 'Hello, world!')", correct: false }
+  -
+    question: Which of the following will NOT instantiate a DateTime object with the current timestamp?
+    answers:
+      - { value: '$date = new DateTime();', correct: false }
+      - { value: "$date = new DateTime('@' . time());", correct: false }
+      - { value: "$date = new DateTime('now');", correct: false }
+      - { value: 'D. $date = new DateTime(time());', correct: true }
+  -
+    question: |
+                Given a DateTime object that is set to the first second of the year 2014, which of the following samples will
+                correctly return a date in the format '2014-01-01 00:00:01'?
+    answers:
+      - { value: "$datetime->format('%Y-%m-%d %h:%i:%s')", correct: false }
+      - { value: "$datetime->format('%Y-%m-%d %h:%i:%s', array('year', 'month', 'day', 'hour', 'minute', 'second'))", correct: false }
+      - { value: "$datetime->format('Y-m-d H:i:s')", correct: true }
+      - { value: "$date = date('Y-m-d H:i:s', $datetime);", correct: false }
+  -
+    question: |
+                Given the following DateTime objects, what can you use to compare the two dates and indicate that $date2
+                is the later of the two dates?
+                $date1 = new DateTime('2014-02-03');
+                $date2 = new DateTime('2014-03-02');
+    answers:
+      - { value: '$date2 > $date1', correct: true }
+      - { value: '$date2 < $date1', correct: false }
+      - { value: '$date1->diff($date2) < 0', correct: false }
+      - { value: '$date1->diff($date2) > 0', correct: false }
+  -
+    question: |
+                Given the following DateTime object, which sample will NOT alter the date to the value '2014- 02-15'?
+                $date = new DateTime('2014-03-15');
+    answers:
+      - { value: "$date->sub(new DateInterval('P1M'));", correct: false }
+      - { value: "$date->setDate(2014, 2, 15);", correct: false }
+      - { value: "$date->modify('-1 month');", correct: false }
+      - { value: "$date->diff(new DateInterval('-P1M'));", correct: true }
+  -
+    question: |
+                Which interfaces could class C implement in order to allow each statement in the following code to work? (Choose 2)
+                $obj = new C();
+                foreach ($obj as $x => $y) {
+                  echo $x, $y;
+                }
+    answers:
+      - { value: 'Iterator', correct: true }
+      - { value: 'ArrayAccess', correct: false }
+      - { value: 'IteratorAggregate', correct: true }
+      - { value: 'ArrayObject', correct: false }
+  -
+    question: |
+                What is the output of the following code?
+                class Foo Implements ArrayAccess {
+                  function offsetExists($k) { return true;}
+                  function offsetGet($k) {return 'a';}
+                  function offsetSet($k, $v) {}
+                  function offsetUnset($k) {}
+                }
+                $x = new Foo();
+                echo array_key_exists('foo', $x)?'true':'false';
+    answers:
+      - { value: 'true', correct: false }
+      - { value: 'false', correct: true }
+  -
+    question: |
+                What is the output of the following code?
+                class Bar {
+                  private $a = 'b';
+                  public $c = 'd';
+                }
+                $x = (array) new Bar();
+                echo array_key_exists('a', $x) ? 'true' : 'false'; echo '-';
+                echo array_key_exists('c', $x) ? 'true' : 'false';
+    answers:
+      - { value: 'false-false', correct: false }
+      - { value: 'false-true', correct: true }
+      - { value: 'true-false', correct: false }
+      - { value: 'true-true', correct: false }
+  -
+    question: |
+                What is the output of the following code?
+                $a = array('a', 'b'=>'c');
+                echo property_exists((object) $a, 'a')?'true':'false'; echo '-';
+                echo property_exists((object) $a, 'b')?'true':'false';
+    answers:
+      - { value: 'false-false', correct: false }
+      - { value: 'false-true', correct: true }
+      - { value: 'true-false', correct: false }
+      - { value: 'true-true', correct: false }
+  -
+    question: |
+                What is the output of the following code?
+                echo '1' . (print '2') + 3;
+    answers:
+      - { value: '123', correct: false }
+      - { value: '213', correct: false }
+      - { value: '142', correct: false }
+      - { value: '214', correct: true }
+      - { value: 'Syntax error', correct: false }
+  -
+    question: |
+                What is the output of the following code?
+                $a = 3;
+                switch ($a) {
+                  case 1: echo 'one'; break;
+                  case 2: echo 'two'; break;
+                  default: echo 'four'; break;
+                  case 3: echo 'three'; break;
+                }
+    answers:
+      - { value: 'one', correct: false }
+      - { value: 'two', correct: false }
+      - { value: 'three', correct: true }
+      - { value: 'four', correct: false }
+  -
+    question: What is "instanceof" an example of?
+    answers:
+      - { value: 'a boolean', correct: false }
+      - { value: 'an operator', correct: true }
+      - { value: 'a function', correct: false }
+      - { value: 'a language construct', correct: false }
+      - { value: 'a class magic', correct: false }
+  -
+    question: Which of the following may be used in conjunction with CASE inside a SWITCH statement?
+    answers:
+      - { value: 'A scalar', correct: false }
+      - { value: 'An expression', correct: false }
+      - { value: 'A boolean', correct: false }
+      - { value: 'All of the above', correct: true }
+  -
+    question: |
+                What is the output of the following code?
+                $a = 'a'; $b = 'b';
+                echo isset($c) ? $a.$b.$c : ($c = 'c').'d';
+    answers:
+      - { value: 'abc', correct: false }
+      - { value: 'cd', correct: true }
+      - { value: '0d', correct: false }
