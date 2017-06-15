@@ -1,20 +1,20 @@
 category: PHP5.5
 questions:
-    -
+    1.
         question: 'Which of the following tags are an acceptable way to begin a PHP Code block?'
         answers:
             - {value: '<SCRIPT LANGUAGE="php">',         correct: true}
-            - {value: '<!',                                                   correct: true}
+            - {value: '<!',                                                   correct: false}
             - {value: '<%',                                                 correct: true}
             - {value: '<?',                                                  correct: true}
-    -
+    2.
         question: 'Which of the following are valid PHP variables?'
         answers:
             - {value: '@$foo',      correct: true}
             - {value: '&$variable', correct: true}
             - {value: '${0x0}',       correct: true}
             - {value: '$0x0',          correct: false}
-    -
+    3.
         question: 'What is the best way to iterate and modify every element of an array using PHP 5?'
         answers:
             - {value: You cannot modify an array during iteration.,         correct: false}
@@ -22,20 +22,19 @@ questions:
             - {value: 'foreach($array as $key => &$val) { /* ... * / }',      correct: true}
             - {value: 'foreach($array as $key => $val) { /* ... * / }',        correct: false}
             - {value: 'while(list($key, $val) = each($array)) { /* ... * / }',  correct: false}
-    -
+    4.
         question: |
                        What is the output of the following PHP code?
                        define("FOO", 10);
                        $array = [10 => FOO,"FOO" => 20];
                        print $array[$array[FOO]] * $array["FOO"];
-
         answers:
             - {value: FOO,  correct: false}
             - {value: 100,    correct: false}
             - {value: 200,    correct: true}
             - {value: 20,      correct: false}
             - {value: 10,      correct: false}
-    -
+    5.
         question: |
                        What is the output of the following PHP script?
                        $a = 1;
@@ -51,7 +50,7 @@ questions:
             - {value: 643, correct: false}
             - {value: 257, correct: false}
             - {value: 432.75, correct: false}
-    -
+    6.
         question: What is the best way to ensure that a user-defined function is always passed an object as its single parameter?
         answers:
             - {value: 'function myfunction(stdClass $a)', correct: true}
@@ -59,7 +58,7 @@ questions:
             - {value: 'Use is_object() within the function', correct: false}
             - {value: 'There is no way to ensure the parameter will be an object.', correct: false}
             - {value: 'function myfunction(Object $a)', correct: false}
-    -
+    7.
         question: |
                        What does the following function do, when passed two integer values for $p and $q?
                        function magic($p, $q) {
@@ -71,7 +70,7 @@ questions:
             - {value: 'Determines if they are both even or odd?', correct: false}
             - {value: 'Determines the greatest common divisor between them.', correct: true}
             - {value: 'Calculates the modulus between the two.', correct: false}
-    -
+    8.
         question: |
                        What would go in place of ?????? below to make this script execute without a fatal error?
                        $a = 1;
@@ -84,7 +83,7 @@ questions:
             - {value: 'stop();', correct: false}
             - {value: '__halt_compiler();', correct: true}
             - {value: 'exit();', correct: true}
-    -
+    9.
         question: What is the difference between the ``include`` and ``require`` language constructs?
         answers:
             - {value: 'Require constructs can''t be used with URL filenames', correct: false}
@@ -92,21 +91,21 @@ questions:
             - {value: 'There is no difference other than the name', correct: false}
             - {value: 'Include constructs are processed at run time; require constructs are processed at compile time', correct: false}
             - {value: 'Require constructs cause a fatal error if the file can''t be read', correct: true}
-    -
+    10.
         question: How does one access standard input/output and error streams in PHP 5?
         answers:
             - {value: 'STDIN, STDOUT and STDERR constants', correct: true}
             - {value: 'Use stdin(), stdout() and stderr() functions', correct: false}
             - {value: 'PHP::STDIN, PHP::STDOUT and PHP::STDERR class constants', correct: false}
             - {value: 'Use PHP::stdin(), PHP::stdout() and PHP::stderr() class functions', correct: false}
-    -
+    11.
         question: How to access standard error stream in PHP ?
         answers:
             - {value: '$stderr = STDERR;', correct: true}
             - {value: '$stderr = fopen("php://stderr", "w");', correct: true}
             - {value: '$stderr = stderr("w")', correct: false}
-            - {value: '$stderr = fwrite("php://stderr");', correct: true)}
-    -
+            - {value: '$stderr = fwrite("php://stderr");', correct: false}
+    12.
         question: |
                        What would you replace ??????? with, below, to make the string Hello, World! be displayed?
                        function myfunction() {
@@ -120,7 +119,7 @@ questions:
             - {value: '$string = $_ARGV[0];', correct: false}
             - {value: 'list($string) = func_get_args();', correct: true}
             - {value: '$string = get_function_args();', correct: false}
-    -
+    13.
         question: 'For an arbitrary string $mystring, which of the following checks will correctly determine if the string PHP exists within it?'
         answers:
             - {value: 'if(strpos($mystring, "PHP") !== false)', correct: true}
@@ -128,7 +127,7 @@ questions:
             - {value: 'if(strpos($mystring, "PHP") === true', correct: false}
             - {value: 'if(strloc($mystring, "PHP") == true', correct: false}
             - {value: 'if(strloc($mystring, "PHP") === false)', correct: false}
-    -
+    14.
         question: |
                         What is the output of the following?
                         $a = 010;
@@ -141,8 +140,7 @@ questions:
             - {value: '22', correct: false}
             - {value: '$a is an invalid value', correct: false}
             - {value: '2', correct: false}
-
-    -
+    15.
         question: |
                         What is the output of the following?
                         $a = 20;
@@ -158,8 +156,7 @@ questions:
             - {value: 'Syntax Error', correct: false}
             - {value: '60', correct: false}
             - {value: '70', correct: false}
-
-    -
+    16.
         question: |
                     What is the output of the following function?
                     function &find_variable(&$one, &$two, &$three) {
@@ -179,7 +176,7 @@ questions:
             - {value: '1: 2, 2: 21, 3: 15', correct: false}
             - {value: '1: 3, 2: 20, 3: 15', correct: false}
             - {value: '1: 2, 2: 20, 3: 16', correct: true}
-    -
+    17.
         question: 'What are the three access modifiers that you can use in PHP objects?'
         answers:
             - {value: 'protected', correct: true}
@@ -187,14 +184,14 @@ questions:
             - {value: 'static', correct: false}
             - {value: 'private', correct: true}
             - {value: 'final', correct: false}
-    -
+    18.
         question: 'When checking to see if two variables contain the same instance of an object, which of the following comparisons should be used?'
         answers:
             - {value: 'if($obj1->equals($obj2) && ($obj1 instanceof $obj2))', correct: false}
             - {value: 'if($obj1->equals($obj2))', correct: false}
             - {value: 'if($obj1 instanceof $obj2)', correct: false}
             - {value: 'if($obj1 === $obj2)', correct: true}
-    -
+    19.
         question: 'In PHP 5 you can use the ______ operator to ensure that an object is of a particular type. You can also use _______ in the function declaration.'
         answers:
             - {value: 'instanceof, is_a', correct: false}
@@ -202,7 +199,7 @@ questions:
             - {value: 'type, instanceof', correct: false}
             - {value: '===, type-hinting', correct: false}
             - {value: '===, is_a', correct: false}
-    -
+    20.
         question: |
                     What is wrong with the following code?
                     function duplicate($obj) {
@@ -219,7 +216,7 @@ questions:
             - {value: 'duplicate() must accept its parameter by reference', correct: false}
             - {value: 'You must use the clone operator to make a copy of an object', correct: true}
             - {value: 'duplicate() must return a reference', correct: false}
-    -
+    21.
         question: 'How can you modify the copy of an object during a clone operation?'
         answers:
             - {value: 'Put the logic in the object''s constructor to alter the values', correct: false}
@@ -227,7 +224,7 @@ questions:
             - {value: 'Implement the object''s __clone() method', correct: true}
             - {value: 'Implement __get() and __set() methods with the correct logic', correct: false}
             - {value: 'Implement the __copy() method with the correct logic', correct: false}
-    -
+    22.
         question: 'What is the primary difference between a method declared as static and a normal method?'
         answers:
             - {value: 'Static methods can only be called using the :: syntax and never from an instance', correct: false}
@@ -235,8 +232,7 @@ questions:
             - {value: 'Static methods cannot be called from within class instances', correct: false}
             - {value: 'Static methods don''t have access to the self keyword', correct: true}
             - {value: 'There is no functional difference between a static and non-static method', correct: false}
-
-    -
+    23.
         question: |
                     What is the output of the following script?
                     class ClassOne {
@@ -265,7 +261,7 @@ questions:
             - {value: 'a: 30, b: 10', correct: true}
             - {value: 'a: 20, b: 20', correct: false}
             - {value: 'a: 10, b: 10', correct: false}
-    -
+    24.
         question: 'The ______ keyword is used to indicate an incomplete class or method, which must be further extended and/or implemented in order to be used.'
         answers:
             - {value: 'final', correct: false}
@@ -273,7 +269,7 @@ questions:
             - {value: 'incomplete', correct: false}
             - {value: 'abstract', correct: true}
             - {value: 'implements', correct: false}
-    -
+    25.
         question: 'To ensure that a given object has a particular set of methods, you must provide a method list in the form of an ________ and then attach it as part of your class using the ________ keyword.'
         answers:
             - {value: 'array, interface', correct: false}
@@ -281,7 +277,7 @@ questions:
             - {value: 'interface, extends', correct: false}
             - {value: 'instance, implements', correct: false}
             - {value: 'access-list, instance', correct: false}
-    -
+    26.
         question: 'Type-hinting and the instanceof keyword can be used to check what types of things about variables?'
         answers:
             - {value: 'If a particular child class extends from it', correct: false}
@@ -289,7 +285,7 @@ questions:
             - {value: 'If they are an abstract class', correct: false}
             - {value: 'If they have a particular parent class', correct: true}
             - {value: 'If they are an instance of a particular class', correct: true}
-    -
+    27.
         question: 'What three special methods can be used to perform special logic in the event a particular accessed method or member variable is not found?'
         answers:
             - {value: '__get($variable)', correct: true}
@@ -297,7 +293,7 @@ questions:
             - {value: '__destruct()', correct: false}
             - {value: '__set($variable, $value)', correct: true}
             - {value: '__call($method)', correct: false}
-    -
+    28.
         question: 'The _______ method will be called automatically when an object is represented as a string.'
         answers:
             - {value: 'getString()', correct: false}
@@ -305,7 +301,7 @@ questions:
             - {value: '__value()', correct: false}
             - {value: '__toString()', correct: true}
             - {value: '__getString()', correct: false}
-    -
+    29.
         question: 'When an object is serialized, which method will be called, automatically, providing your object with an opportunity to close any resources or otherwise prepare to be serialized?'
         answers:
             - {value: '__destroy()', correct: false}
@@ -313,7 +309,7 @@ questions:
             - {value: '__destruct()', correct: false}
             - {value: '__shutdown()', correct: false}
             - {value: '__sleep()', correct: true}
-    -
+    30.
         question: 'Which php.ini directive should be disabled to prevent the execution of a remote PHP script via an include or require construct?'
         answers:
             - {value: 'You cannot disable remote PHP script execution', correct: false}
@@ -321,7 +317,7 @@ questions:
             - {value: 'allow_remote_url', correct: false}
             - {value: 'allow_url_fopen', correct: true}
             - {value: 'allow_require', correct: false}
-    -
+    31.
         question: 'Which of the following php.ini directives should be disabled to improve the outward security of your application?'
         answers:
             - {value: 'safe_mode', correct: false}
@@ -329,7 +325,7 @@ questions:
             - {value: 'register_globals', correct: true}
             - {value: 'display_errors', correct: true}
             - {value: 'allow_url_fopen', correct: true}
-    -
+    32.
         question: ' Which of the following list of potential data sources should be considered trusted?'
         answers:
             - {value: '$_ENV', correct: false}
@@ -337,7 +333,7 @@ questions:
             - {value: '$__COOKIE', correct: false}
             - {value: '$_SERVER', correct: false}
             - {value: 'None of the above', correct: true}
-    -
+    33.
         question: |
                     Consider the following code:
                     session_start();
@@ -356,7 +352,7 @@ questions:
             - {value: 'Code Injection', correct: false}
             - {value: 'SQL Injection', correct: false}
             - {value: 'Cross-Site Request Forgery', correct: false}
-    -
+    34.
         question: 'What is the best measure one can take to prevent a cross-site request forgery?'
         answers:
             - {value: 'Disallow requests from outside hosts', correct: false}
@@ -364,7 +360,7 @@ questions:
             - {value: 'Turn off allow_url_fopen in php.ini', correct: false}
             - {value: 'Filter all output', correct: false}
             - {value: 'Filter all input', correct: false}
-    -
+    35.
         question: |
                     Consider the following code:
                     header("Location: {$_GET['url']}");
@@ -375,7 +371,7 @@ questions:
             - {value: 'PHPSESSID%611243', correct: false}
             - {value: 'Set-Cookie%3A+PHPSESSID%611234', correct: false}
             - {value: 'http%3A%2F%2Fwww.zend.com%2F%0D%0ASet-Cookie%3A+PHPSESSID%611234', correct: false}
-    -
+    34.
         question: 'When implementing a permissions system for your Web site, what should always be done with regards to the session?'
         answers:
             - {value: 'You should not implement permission systems using sessions', correct: false}
@@ -383,7 +379,7 @@ questions:
             - {value: 'The session key should be regenerated', correct: true}
             - {value: 'The session should be destroyed', correct: false}
             - {value: 'None of the above', correct: false}
-    -
+    35.
         question: 'Which of the following is not valid syntax for creating a new array key?'
         answers:
             - {value: '$a[] = "value";', correct: false}
@@ -391,7 +387,7 @@ questions:
             - {value: '$a[0] = "value";', correct: false}
             - {value: '$a{0} = "value";', correct: false}
             - {value: '$a[$b = 0] = "value";', correct: false}
-    -
+    36.
         question: 'Which of the following functions will sort an array in ascending order by value, while preserving key associations?'
         answers:
             - {value: 'asort()', correct: true}
@@ -399,7 +395,7 @@ questions:
             - {value: 'krsort()', correct: false}
             - {value: 'ksort()', correct: false}
             - {value: 'sort()', correct: false}
-    -
+    37.
         question: |
                     What is the output of the following code block?
                     $a = "The quick brown fox jumped over the lazy dog.";
@@ -411,7 +407,7 @@ questions:
             - {value: 'THE QUICK BROWN FOX JUMPED OVER THE LAZY DOG.', correct: true}
             - {value: 'A PHP Error', correct: false}
             - {value: 'Array Array Array Array Array Array Array Array Array', correct: false}
-    -
+    38.
         question: 'Which from the following list is not an appropriate use of an array?'
         answers:
             - {value: 'As a list', correct: false}
@@ -419,7 +415,7 @@ questions:
             - {value: 'As a Lookup Table', correct: false}
             - {value: 'A Stack', correct: false}
             - {value: 'As a hash table', correct: false}
-    -
+    39.
         question: |
                     What is the output of this code snippet?
                     $a = array(0.001 => 'b', .1 => 'c');
@@ -430,7 +426,7 @@ questions:
             - {value: "0 => 'c'", correct: true}
             - {value: "'0.001' => 'b', '0.1' => c'", correct: false}
             - {value: 'A Syntax Error', correct: false}
-    -
+    40.
         question: 'Which of the following functions could be used to break a string into an array?'
         answers:
             - {value: 'array_split()', correct: false}
@@ -438,7 +434,7 @@ questions:
             - {value: 'string_split()', correct: false}
             - {value: 'preg_match_all()', correct: true}
             - {value: 'explode()', correct: true}
-    -
+    41.
         question: 'If you wanted a variable containing the letters A through Z, that allowed you to access each letter independently, which of the following approaches could you use?'
         answers:
             - {value: "$str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';", correct: true}
@@ -446,7 +442,7 @@ questions:
             - {value: 'explode("", "ABCDEFGHIJKLMNOPQRSTUVWXYZ");', correct: false}
             - {value: 'You would use the ALPHA_ARRAY constant', correct: false}
             - {value: 'None of the above', correct: false}
-    -
+    42.
         question: |
                     What is the output of the following code block?
                     $array = array(1 => 0, 2, 3, 4);
@@ -458,7 +454,7 @@ questions:
             - {value: '0 => 0, 1 => 2, 2 => 3, 3 => x, 4 => 4', correct: true}
             - {value: '0 => x, 1 => 0, 2 => 1, 3 => 2, 4 => 3', correct: false}
             - {value: '1 => 1, 3 => x, 2 => 2, 4 => 4', correct: false}
-    -
+    43.
         question: 'Which function would you use to add an element to the beginning of an array?'
         answers:
             - {value: 'array_shift()', correct: false}
@@ -466,7 +462,7 @@ questions:
             - {value: '$array[0] = "value";', correct: false}
             - {value: 'array_unshift()', correct: true}
             - {value: 'array_pop()', correct: false}
-    -
+    44.
         question: |
                     Which key will not be displayed from the following code block?
                     $array = array('a' => 'John',
@@ -483,7 +479,7 @@ questions:
             - {value: 'b', correct: false}
             - {value: 'a', correct: false}
             - {value: 'They all will be displayed', correct: false}
-    -
+    45.
         question: |
                     What is the result of the following code snippet?
                     $array = array('a' => 'John',
@@ -501,7 +497,7 @@ questions:
             - {value: 'Coggeshall', correct: false}
             - {value: 'NULL', correct: false}
             - {value: 'Array', correct: false}
-    -
+    46.
         question: |
                     What should go in the missing line ????? below to produce the output shown?
                     $array_one = array(1,2,3,4,5);
@@ -526,15 +522,15 @@ questions:
             - {value: '$array_three = array_combine(array_reverse($array_one), $array_two);	', correct: true}
             - {value: '$array_three = array_merge($array_one, $array_two);', correct: false}
             - {value: '$array_three = array_reverse($array_one) + $array_two;', correct: false}
-    -
+    47.
         question: 'Which of the following functions are used with the internal array pointer to accomplish an action?'
         answers:
             - {value: 'key', correct: true}
             - {value: 'forward', correct: false}
             - {value: 'prev', correct: true}
             - {value: 'current', correct: true}
-            - {value: 'next', correct: next}
-    -
+            - {value: 'next', correct: true}
+    48.
         question: |
                     Given the following array:
                     $array = array(1,1,2,3,4,4,5,6,6,6,6,3,2,2,2);
@@ -545,7 +541,7 @@ questions:
             - {value: 'A foreach loop', correct: false}
             - {value: 'count', correct: false}
             - {value: 'a for loop', correct: false}
-    -
+    49.
         question: 'The ____ construct is particularly useful to assign your own variable names to values within an array.'
         answers:
             - {value: 'array_get_variables', correct: false}
@@ -553,7 +549,7 @@ questions:
             - {value: 'each', correct: false}
             - {value: 'import_variables', correct: false}
             - {value: 'list', correct: true}
-    -
+    50.
         question: | 
                     The following code snippet displays what for the resultant array?
                     $a = array(1 => 0, 3 => 2, 4 => 6);
@@ -565,7 +561,7 @@ questions:
             - {value: '3 => 1, 3=> 2, 4 => 3, 4=> 6', correct: false}
             - {value: '1 => 0, 3 => 2, 4 => 6', correct: false}
             - {value: 'An empty Array', correct: true}
-    -
+    51.
         question: 'Which of the following are not valid ways to embed a variable into a string?'
         answers:
             - {value: '$a = "Value: $value->getValue()";', correct: true}
@@ -573,7 +569,7 @@ questions:
             - {value: '$a = ''Value: $value'';', correct: true}
             - {value: '$a = "Value: $value";', correct: false}
             - {value: '$a = "Value: {$value[''val'']}";', correct: false}
-    -
+    52.
         question: | 
                     What variable reference would go in the spots indcated by ????? in the code segment below?
                     $msg = "The Quick Brown Foxed Jumped Over the Lazy Dog";
@@ -593,7 +589,7 @@ questions:
             - {value: 'ord($msg);', correct: false}
             - {value: 'chr($msg);', correct: false}
             - {value: 'substr($msg, $i, 2);', correct: false}
-    -
+    53.
         question: | 
                     Given the two values below, which of the following possiblities will print 10 foos20 bars?
                     $var1 = "10 foos";
@@ -605,7 +601,7 @@ questions:
             - {value: '$var1 + $var2', correct: false}
             - {value: 'All of the above', correct: false}
             - {value: 'None of the above', correct: false}
-    -
+    54.
         question: 'When comparing two strings, which of the following is acceptable?'
         answers:
             - {value: '$a === $b;', correct: true}
@@ -613,21 +609,21 @@ questions:
             - {value: 'strcmp($a, $b);', correct: true}
             - {value: '$a == $b;', correct: true}
             - {value: 'str_compare($a, $b);', correct: false}
-    -
+    55.
         question: 'A fingerprint of a string can be determined using which of the following?'
         answers:
             - {value: 'md5()', correct: true}
             - {value: 'hash()', correct: false}
             - {value: 'fingerprint()', correct: false}
             - {value: 'None of the above', correct: false}
-    -
+    56.
         question: 'Which of the following is the best way to split a string on the "-=-" pattern?'
         answers:
             - {value: 'They all are equally proper methods', correct: false}
             - {value: 'str_split($string, strpos($string, "-=-"))', correct: false}
             - {value: 'preg_split("-=-", $string);', correct: false}
             - {value: 'explode("-=-", $string);', correct: true}
-    -
+    57.
         question: | 
                     What is the output of the following code?
                     $string = "14302";
@@ -639,7 +635,7 @@ questions:
             - {value: '44302', correct: false}
             - {value: '14402', correct: false}
             - {value: 'Array', correct: false}
-    -
+    58.
         question: 'Which function is best suited for removing markup tags from a string?'
         answers:
             - {value: 'strip_markup', correct: false}
@@ -647,7 +643,7 @@ questions:
             - {value: 'str_replace', correct: false}
             - {value: 'preg_replace', correct: false}
             - {value: 'preg_strip', correct: false}
-    -
+    59.
         question: 'Identify the best approach to compare to variables in a binary-safe fashion'
         answers:
             - {value: 'Both strcmp() and $a === $b', correct: true}
@@ -655,7 +651,7 @@ questions:
             - {value: '$a === $b', correct: false}
             - {value: 'str_compare()', correct: false}
             - {value: 'strstr()', correct: false}
-    -
+    60.
         question: | 
                     Consider the following script:
                     $oranges = 10;
@@ -671,6 +667,7 @@ questions:
             - {value: 'printf($string, $apples, $oranges);', correct: true}
             - {value: 'print sprintf($apples, $oranges);', correct: false}
             - {value: 'sprintf($string, $oranges, $apples);', correct: false}
+    61.
         question: | 
                     Which functions would be needed to translate the following string:
                     I love PHP 5
@@ -682,7 +679,7 @@ questions:
             - {value: 'toupper()', correct: false}
             - {value: 'str_reverse()', correct: false}
             - {value: 'strrev()', correct: true}
-    -
+    62.
         question: | 
                     Which string does the following PCRE regular expression match?
                     $regex = "/^([a-z]{5})[1-5]+([a-z]+)/";
@@ -692,7 +689,7 @@ questions:
             - {value: 'hello34212343goodbye', correct: true}
             - {value: 'abcdefghi12345abc', correct: false}
             - {value: 'None of the above', correct: false}
-    -
+    63.
         question: 'Which PCRE regular expression will match the string PhP5-rocks'
         answers:
             - {value: '/^[hp1-5]*\-.*/i', correct: true}
@@ -700,7 +697,7 @@ questions:
             - {value: '/[hp][1-5]*\-.*/', correct: false}
             - {value: '/[PhP]{3}[1-5]{2,3}\-.*$/', correct: false}
             - {value: '/[a-z1-5\-]*/', correct: false}
-    -
+    64.
         question: 'If regular expressions must be used, in general which type of regular expression functions available to PHP is preferred for performance reasons?'
         answers:
             - {value: 'strtok() using regular expressions', correct: false}
@@ -708,7 +705,7 @@ questions:
             - {value: 'parse_str() using regular expressions', correct: false}
             - {value: 'strregex* regular expression functions', correct: false}
             - {value: 'ereg* regular expression functions', correct: false}
-    -
+    65.
         question: 'To destroy one variable within a PHP session you should use which method in PHP 5?'
         answers:
             - {value: 'Unset the variable in $HTTP_SESSION_VARS', correct: false}
@@ -716,14 +713,14 @@ questions:
             - {value: 'Use the session_unset() function', correct: false}
             - {value: 'unset the variable in $_SESSION using unset()', correct: true}
             - {value: 'Any of the above are acceptable in PHP 5', correct: false}
-    -
+    66.
         question: 'If you would like to store your session in the database, you would do which of the following?'
         answers:
             - {value: 'It requires a custom PHP extension to change the session handler', correct: false}
             - {value: 'Implement the session_set_save_handler() function', correct: false}
             - {value: 'Create functions for each session handling step and use session_set_save_handler() to override PHP''s internal settings', correct: true}
             - {value: 'Configure the session.save_handler INI directive to your session class', correct: false}
-    -
+    67.
         question: 'To destroy a PHP session completely, one must which of the following?'
         answers:
             - {value: 'Regenerate the session ID using session_regenerate_id()', correct: false}
@@ -731,7 +728,7 @@ questions:
             - {value: 'Use session_demolish() to completely destroy the session', correct: false}
             - {value: 'Change the session name using session_name()', correct: false}
             - {value: 'Destroy the session data using session_destroy()', correct: true}
-    -
+    68.
         question: 'If you would like to change the session ID generation function, which of the following is the best approach for PHP 5?'
         answers:
             - {value: 'Set the session.hash_function INI configuration directive', correct: true}
@@ -739,7 +736,7 @@ questions:
             - {value: 'Set the session id by force using the session_id() function', correct: false}
             - {value: 'Use the session_regenerate_id() function', correct: false}
             - {value: 'Implement a custom session handler', correct: false}
-    -
+    69.
         question: | 
                     Consider the following HTML fragement:
                     <select name="?????" multiple>
@@ -753,7 +750,7 @@ questions:
             - {value: 'myselectbox[''multiple'']', correct: false}
             - {value: 'myselectbox{''multiple''}', correct: false}
             - {value: 'myselectbox', correct: false}
-    -
+    70.
         question: 'When uploading a file using HTTP, which variable can be used to locate the file on PHP''s local filesystem?'
         answers:
             - {value: '$_FILES[''fieldname''][''tmp_name'']', correct: true}
@@ -761,21 +758,21 @@ questions:
             - {value: '$_FILES[''fieldname''][0][''filename'']', correct: false}
             - {value: '$_FILES[''fieldname''][''filename'']', correct: false}
             - {value: 'None of the above', correct: false}
-    -
+    71.
         question: 'To force a user to redirect to a new URL from within a PHP 5 script, which of the following should be used?'
         answers:
             - {value: 'Send a HTTP "Location:" header', correct: true}
             - {value: 'Use the HTML <redirect> Tag', correct: false}
             - {value: 'Send a HTTP "Forward:" header', correct: false}
             - {value: 'Use the redirect() function', correct: false}
-    -
+    72.
         question: 'Setting a cookie on the client in PHP 5 can be best accomplished by:'
         answers:
             - {value: 'Use the add_cookie() function', correct: false}
             - {value: 'Use the setcookie() function', correct: true}
             - {value: 'Use the the apache_send_header() function', correct: false}
             - {value: 'Setting a variable in the $_COOKIE superglobal', correct: false}
-    -
+    73.
         question: 'How does one create a cookie which will exist only until the browser session is terminated?'
         answers:
             - {value: 'You cannot create cookies that expire when the browser session is terminated', correct: false}
@@ -783,7 +780,7 @@ questions:
             - {value: 'Do not provide a cookie expiration time', correct: true}
             - {value: 'Enable Cookie Security', correct: false}
             - {value: 'Set a cookie without a domain', correct: false}
-    -
+    74.
         question: 'Setting a HTTP cookie on the client which is not URL-encoded is done how in PHP 5?'
         answers:
             - {value: 'Use the setrawcookie() function', correct: true}
@@ -791,7 +788,7 @@ questions:
             - {value: 'Use urldecode() on the return value of setcookie()', correct: false}
             - {value: 'Setting the $no_encode parameter of setcookie() to a boolean ''true''', correct: false}
             - {value: 'All cookies must be URL encoded', correct: false}
-    -
+    75.
         question: 'During an HTTP authentication, how does one determine the username and password provided by the browser?'
         answers:
             - {value: 'Parse the HTTP headers manually using http_get_headers()', correct: false}
@@ -799,7 +796,7 @@ questions:
             - {value: 'Use the $_SERVER[''HTTP_USER''] and $_SERVER[''HTTP_PASSWORD''] variables', correct: false}
             - {value: 'Use the $_SERVER[''PHP_AUTH_USER''] and $_SERVER[''PHP_AUTH_PW''] variables', correct: true}
             - {value: 'Parse the $_SERVER[''REQUEST_URI''] variable', correct: false}
-    -
+    76.
         question: | 
                     Consider the following function:
                     function redirect($url) {
@@ -815,7 +812,7 @@ questions:
             - {value: '!header_exists("Location: $url")', correct: false}
             - {value: '!header_location($url)', correct: false}
             - {value: ' $_SERVER[''HTTP_LOCATION''] != $url', correct: false}
-    -
+    77.
         question: 'One can ensure that headers can always be sent from a PHP script by doing what?'
         answers:
             - {value: 'Enable header buffering in PHP 5', correct: false}
@@ -823,7 +820,7 @@ questions:
             - {value: 'Enable output buffering in PHP 5', correct: true}
             - {value: 'There is no way to ensure that headers can always be set, they must always be checked', correct: false}
             - {value: 'None of the above', correct: false}
-    -
+    78.
         question: 'Which of the following is not a valid fopen() access mode:'
         answers:
             - {value: 'b', correct: true}
