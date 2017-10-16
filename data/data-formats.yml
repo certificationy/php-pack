@@ -29,4 +29,4 @@ questions:
             - { value: '$date = new DateTime();', correct: false }
             - { value: "$date = new DateTime('@' . time());", correct: false }
             - { value: "$date = new DateTime('now');", correct: false }
-            - { value: 'D. $date = new DateTime(time());', correct: true }
+            - { value: '$date = new DateTime(time());', correct: true }
