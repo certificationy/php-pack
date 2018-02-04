@@ -114,6 +114,7 @@ questions:
             - {value: 'printf($string, $apples, $oranges);', correct: true}
             - {value: 'print sprintf($apples, $oranges);', correct: false}
             - {value: 'sprintf($string, $oranges, $apples);', correct: false}
+    -
         question: | 
                     Which functions would be needed to translate the following string:
                     I love PHP 5
