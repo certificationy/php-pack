@@ -18,7 +18,7 @@ questions:
             - {value: '$a = "Value: {$value[''val'']}";', correct: false}
     -
         question: | 
-                    What variable reference would go in the spots indcated by ????? in the code segment below?
+                    What variable reference would go in the spots indicated by ????? in the code segment below?
                     $msg = "The Quick Brown Foxed Jumped Over the Lazy Dog";
                     $state = true;
                     $retval = "";
