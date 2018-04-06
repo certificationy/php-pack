@@ -33,7 +33,7 @@ questions:
             - {value: 'Implement a custom session handler', correct: false}
     -
         question: | 
-                    Consider the following HTML fragement:
+                    Consider the following HTML fragment:
                     <select name="?????" multiple>
                     <option value="1">Item #1</option>
                     <!-- ... more options ... -->
