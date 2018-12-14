@@ -39,7 +39,7 @@ questions:
     -
         question: |
                     What is the output of this code snippet?
-                    $a = array(0.001 => 'b', .1 => 'c');
+                    $a = [0.001 => 'b', .1 => 'c'];
                     var_dump($a);
         answers:
             - {value: 'An empty array', correct: false}
@@ -66,8 +66,8 @@ questions:
     -
         question: |
                     What is the output of the following code block?
-                    $array = array(1 => 0, 2, 3, 4);
-                    array_splice($array, 3, count($array), array_merge(array('x'), array_slice($array, 3)));
+                    $array = [1 => 0, 2, 3, 4];
+                    array_splice($array, 3, count($array), array_merge(['x'], array_slice($array, 3)));
                     var_dump($array);
         answers:
             - {value: '1 => 1, 2 => 2, 3 => x, 4 => 4', correct: false}
@@ -86,10 +86,11 @@ questions:
     -
         question: |
                     Which key will not be displayed from the following code block?
-                    $array = array('a' => 'John',
-                                   'b' => 'Coggeshall',
-                                   'c' => array('d' => 'John',
-                                                'e' => 'Smith'));
+                    $array = ['a' => 'John',
+                              'b' => 'Coggeshall',
+                              'c' => ['d' => 'John',
+                                      'e' => 'Smith']
+                             ];
                     function display($item, $key) {
                         print "$key => $item\n";
                     }
@@ -103,10 +104,11 @@ questions:
     -
         question: |
                     What is the result of the following code snippet?
-                    $array = array('a' => 'John',
-                                   'b' => 'Coggeshall',
-                                   'c' => array('d' => 'John',
-                                                'e' => 'Smith'));
+                    $array = ['a' => 'John',
+                              'b' => 'Coggeshall',
+                              'c' => ['d' => 'John',
+                                      'e' => 'Smith']
+                             ];
                     function something($array) {
                         extract($array);
                         return $c['e'];
@@ -121,8 +123,8 @@ questions:
     -
         question: |
                     What should go in the missing line ????? below to produce the output shown?
-                    $array_one = array(1,2,3,4,5);
-                    $array_two = array('A', 'B', 'C', 'D', 'E');
+                    $array_one = [1, 2, 3, 4, 5];
+                    $array_two = ['A', 'B', 'C', 'D', 'E'];
 
                     ???????
 
@@ -154,7 +156,7 @@ questions:
     -
         question: |
                     Given the following array:
-                    $array = array(1,1,2,3,4,4,5,6,6,6,6,3,2,2,2);
+                    $array = [1, 1, 2, 3, 4, 4, 5, 6, 6, 6, 6, 3, 2, 2, 2];
                     The fastest way to determine the total number a particular value appears in the array is to use which function?
         answers:
             - {value: 'array_total_values', correct: false}
@@ -173,8 +175,8 @@ questions:
     -
         question: | 
                     The following code snippet displays what for the resultant array?
-                    $a = array(1 => 0, 3 => 2, 4 => 6);
-                    $b = array(3 => 1, 4 => 3, 6 => 4);
+                    $a = [1 => 0, 3 => 2, 4 => 6];
+                    $b = [3 => 1, 4 => 3, 6 => 4];
                     print_r(array_intersect($a, $b));
         answers:
             - {value: '1 => 0', correct: false}

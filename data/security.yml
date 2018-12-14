@@ -32,8 +32,8 @@ questions:
                        && !empty($_REQUEST['quantity'])) {
                       $id = scrub_id($_REQUEST['id']);
                       $quantity = scrub_quantity($_REQUEST['quantity'])
-                      $_SESSION['cart'][] = array('id' => $id,
-                                                  'quantity' => $quantity)
+                      $_SESSION['cart'][] = ['id' => $id,
+                                             'quantity' => $quantity];
                     }
                     /* .... */
                     What potential security hole would this code snippet produce?

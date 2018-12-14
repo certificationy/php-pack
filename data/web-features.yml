@@ -40,7 +40,7 @@ questions:
                     </select>
                     Which of the following name attributes should be used to capture all of the data from the user in PHP?
         answers:
-            - {value: 'myselectbox=array()', correct: false}
+            - {value: 'myselectbox=[]', correct: false}
             - {value: 'myselectbox[]', correct: true}
             - {value: 'myselectbox[''multiple'']', correct: false}
             - {value: 'myselectbox{''multiple''}', correct: false}
