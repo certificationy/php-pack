@@ -29,7 +29,7 @@ questions:
                     Consider the following code:
                     session_start();
                     if (!empty($_REQUEST['id'])
-                       && !empty($_REQUEST['quantity'])) {
+                      && !empty($_REQUEST['quantity'])) {
                       $id = scrub_id($_REQUEST['id']);
                       $quantity = scrub_quantity($_REQUEST['quantity'])
                       $_SESSION['cart'][] = ['id' => $id,
