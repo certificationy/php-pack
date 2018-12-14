@@ -12,8 +12,8 @@ questions:
         question: |
                        What does the following function do, when passed two integer values for $p and $q?
                        function magic($p, $q) {
-                            return ($q == 0) ? $p: magic($q, $p % $q);
-                        }
+                            return ($q == 0) ? $p : magic($q, $p % $q);
+                       }
         answers:
             - {value: 'Loops infinitely.', correct: false}
             - {value: 'Switches the values of $p and $q.', correct: false}
@@ -77,9 +77,9 @@ questions:
         question: |
                     What is the output of the following function?
                     function &find_variable(&$one, &$two, &$three) {
-                        if($one > 10 && $one < 20) return $one;
-                        if($two > 10 && $two < 20) return $two;
-                        if($three > 10 && $three < 20) return $three;
+                        if ($one > 10 && $one < 20) return $one;
+                        if ($two > 10 && $two < 20) return $two;
+                        if ($three > 10 && $three < 20) return $three;
                     }
                     $one = 2;
                     $two = 20;

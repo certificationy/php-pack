@@ -1,13 +1,13 @@
 category: Web Features
 questions:
     -
-        question: 'To destroy one variable within a PHP session you should use which method in PHP 5?'
+        question: 'To destroy one variable within a PHP session you should use which method in PHP?'
         answers:
             - {value: 'Unset the variable in $HTTP_SESSION_VARS', correct: false}
             - {value: 'Use the session_destroy() function', correct: false}
             - {value: 'Use the session_unset() function', correct: false}
             - {value: 'unset the variable in $_SESSION using unset()', correct: true}
-            - {value: 'Any of the above are acceptable in PHP 5', correct: false}
+            - {value: 'Any of the above are acceptable in PHP', correct: false}
     -
         question: 'If you would like to store your session in the database, you would do which of the following?'
         answers:
@@ -24,7 +24,7 @@ questions:
             - {value: 'Change the session name using session_name()', correct: false}
             - {value: 'Destroy the session data using session_destroy()', correct: true}
     -
-        question: 'If you would like to change the session ID generation function, which of the following is the best approach for PHP 5?'
+        question: 'If you would like to change the session ID generation function, which of the following is the best approach for PHP?'
         answers:
             - {value: 'Set the session.hash_function INI configuration directive', correct: true}
             - {value: 'Use the session_set_id_generator() function', correct: false}
@@ -54,14 +54,14 @@ questions:
             - {value: '$_FILES[''fieldname''][''filename'']', correct: false}
             - {value: 'None of the above', correct: false}
     -
-        question: 'To force a user to redirect to a new URL from within a PHP 5 script, which of the following should be used?'
+        question: 'To force a user to redirect to a new URL from within a PHP script, which of the following should be used?'
         answers:
             - {value: 'Send a HTTP "Location:" header', correct: true}
             - {value: 'Use the HTML <redirect> Tag', correct: false}
             - {value: 'Send a HTTP "Forward:" header', correct: false}
             - {value: 'Use the redirect() function', correct: false}
     -
-        question: 'Setting a cookie on the client in PHP 5 can be best accomplished by:'
+        question: 'Setting a cookie on the client in PHP can be best accomplished by:'
         answers:
             - {value: 'Use the add_cookie() function', correct: false}
             - {value: 'Use the setcookie() function', correct: true}
@@ -76,7 +76,7 @@ questions:
             - {value: 'Enable Cookie Security', correct: false}
             - {value: 'Set a cookie without a domain', correct: false}
     -
-        question: 'Setting a HTTP cookie on the client which is not URL-encoded is done how in PHP 5?'
+        question: 'Setting a HTTP cookie on the client which is not URL-encoded is done how in PHP?'
         answers:
             - {value: 'Use the setrawcookie() function', correct: true}
             - {value: 'Set the cookies.urlencode INI directive to false', correct: false}
@@ -97,7 +97,7 @@ questions:
                     function redirect($url) {
                         // Check to make sure we haven't already sent
                         // the header:
-                        if(/*???????*/) {
+                        if (/*???????*/) {
                             header("Location: $url");
                         }
                     }
@@ -110,9 +110,9 @@ questions:
     -
         question: 'One can ensure that headers can always be sent from a PHP script by doing what?'
         answers:
-            - {value: 'Enable header buffering in PHP 5', correct: false}
+            - {value: 'Enable header buffering in PHP', correct: false}
             - {value: 'Set the header.force INI directive to true', correct: false}
-            - {value: 'Enable output buffering in PHP 5', correct: true}
+            - {value: 'Enable output buffering in PHP', correct: true}
             - {value: 'There is no way to ensure that headers can always be set, they must always be checked', correct: false}
             - {value: 'None of the above', correct: false}
     -
