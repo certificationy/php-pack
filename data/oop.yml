@@ -73,7 +73,7 @@ questions:
                             parent::changeValue($this->a + $this->b);
                         }
                         public function displayValues() {
-                            print "a: {$this->a}, b: {$this->b}\n";
+                            echo "a: {$this->a}, b: {$this->b}\n";
                         }
                     }
                     $obj = new ClassTwo();

@@ -30,7 +30,7 @@ questions:
                         }
                         $state = !$state;
                     }
-                    print $retval;
+                    echo $retval;
         answers:
             - {value: '$msg{$i}', correct: true}
             - {value: 'ord($msg);', correct: false}
@@ -41,7 +41,7 @@ questions:
                     Given the two values below, which of the following possibilities will print 10 foos20 bars?
                     $var1 = "10 foos";
                     $var2 = "20 bars";
-                    print ???????;
+                    echo ???????;
         answers:
             - {value: 'implode("", [$var1, $var2]);', correct: true}
             - {value: '$var1 . $var2', correct: true}
@@ -75,7 +75,7 @@ questions:
                     What is the output of the following code?
                     $string = "14302";
                     $string[$string[2]] = "4";
-                    print $string;
+                    echo $string;
         answers:
             - {value: '14304', correct: false}
             - {value: '14342', correct: true}
@@ -110,7 +110,7 @@ questions:
                     "I have 5 apples and 10 oranges"
         answers:
             - {value: 'str_format($string, $apples, $oranges);', correct: false}
-            - {value: 'print($string, $apples, $oranges);', correct: false}
+            - {value: 'echo $string, $apples, $oranges;', correct: false}
             - {value: 'printf($string, $apples, $oranges);', correct: true}
             - {value: 'print sprintf($apples, $oranges);', correct: false}
             - {value: 'sprintf($string, $oranges, $apples);', correct: false}

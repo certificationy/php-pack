@@ -22,7 +22,7 @@ questions:
                     $a = "The quick brown fox jumped over the lazy dog.";
                     $b = array_map("strtoupper", explode(" ", $a));
                     foreach ($b as $value) {
-                        print "$value ";
+                        echo "$value ";
                     }
         answers:
             - {value: 'THE QUICK BROWN FOX JUMPED OVER THE LAZY DOG.', correct: true}
@@ -92,7 +92,7 @@ questions:
                                       'e' => 'Smith']
                              ];
                     function display($item, $key) {
-                        print "$key => $item\n";
+                        echo "$key => $item\n";
                     }
                     array_walk_recursive($array, "display");
         answers:
@@ -113,7 +113,7 @@ questions:
                         extract($array);
                         return $c['e'];
                     }
-                    print something($array);
+                    echo something($array);
         answers:
             - {value: 'Smith', correct: true}
             - {value: 'A PHP Warning', correct: false}

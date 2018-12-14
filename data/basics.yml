@@ -28,7 +28,7 @@ questions:
                        What is the output of the following PHP code?
                        define("FOO", 10);
                        $array = [10 => FOO, "FOO" => 20];
-                       print $array[$array[FOO]] * $array["FOO"];
+                       echo $array[$array[FOO]] * $array["FOO"];
 
         answers:
             - {value: FOO, correct: false}
@@ -45,7 +45,7 @@ questions:
                        $d = $b + $c;
                        $e = $d * $b;
                        $f = ($d + $e) % $a;
-                       print ($f + $e);
+                       echo ($f + $e);
         answers:
             - {value: 643.75, correct: true}
             - {value: 432, correct: false}
@@ -59,7 +59,7 @@ questions:
                         $b = 0xA;
                         $c = 2;
 
-                        print $a + $b + $c;
+                        echo $a + $b + $c;
         answers:
             - {value: '20', correct: true}
             - {value: '22', correct: false}
