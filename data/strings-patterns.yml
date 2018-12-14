@@ -23,7 +23,7 @@ questions:
                     $state = true;
                     $retval = "";
                     for ($i = 0; (isset(??????)); $i++) {
-                        if($state) {
+                        if ($state) {
                             $retval .= strtolower(?????);
                         } else {
                             $retval .= strtoupper(?????);
