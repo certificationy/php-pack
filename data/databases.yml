@@ -41,7 +41,7 @@ questions:
     -
         question: 'Which technique should be used to speed up joins without changing their results?'
         answers:
-            - { value: 'Add indices on joined columns', correct: true }
+            - { value: 'Add an index on joined columns', correct: true }
             - { value: 'Add a WHERE clause', correct: false }
             - { value: 'Add a LIMIT clause', correct: false }
             - { value: 'Use an inner join', correct: false }
