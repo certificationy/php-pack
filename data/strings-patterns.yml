@@ -137,7 +137,7 @@ questions:
             - {value: 'abcdefghi12345abc', correct: false}
             - {value: 'None of the above', correct: false}
     -
-        question: 'Which PCRE regular expression will match the string PhP5-rocks'
+        question: 'Which PCRE regular expression will match exactly the string PhP5-rocks'
         answers:
             - {value: '/^[hp1-5]*\-.*/i', correct: true}
             - {value: '/[hp1-5]*\-.?/', correct: false}
